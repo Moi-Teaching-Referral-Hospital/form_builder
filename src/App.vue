@@ -8,15 +8,14 @@
         Create Blank Form
       </button>
 
-       <button
+      <button
         class="btn btn-info mr-2 col-md-4 main-container"
         @click="exportConfig"
       >
-        Export 
+        Export
       </button>
 
-
-      <div class="col-md-6 pull-right"> 
+      <div class="col-md-6 pull-right">
         <button
           class="btn btn-default mr-2   main-container"
           @click="viewRenderer"
@@ -33,9 +32,7 @@
 
     <hr />
 
-    <FormBuilder v-if="!isRenderer" v-model="formData"></FormBuilder>
-
-    <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
+<div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
       <div class="col-md-12 mb-4">
         <button class="btn btn-success  mr-2" @click="isShowData = !isShowData">
           <span v-show="isShowData">Hide Form Data</span>
@@ -50,18 +47,27 @@
       <FormRenderer
         :class="{ 'col-md-9': isShowData, 'col-md-12': !isShowData }"
         :form-configuration="formData"
+        :reference="reference"
         v-model="formInputData"
+        :readonly="true"
       />
+    </div>
 
-      <div
-        class="p-0"
-        :class="{ 'col-md-3': isShowData, 'd-none': !isShowData }"
-      >
-        <h4>Form Input Data</h4>
-        <pre
-          class="code"
-        ><code class="code" v-html="JSON.stringify(formInputData, null, 2)"></code></pre>
-      </div>
+    <FormBuilder v-show="!isRenderer" v-model="formData" ></FormBuilder>
+
+    
+    <div class="p-0" >
+      <h4>Form Input Data</h4>
+      <pre
+        class="code"
+      ><code class="code" v-html="JSON.stringify(formInputData, null, 2)"></code></pre>
+    </div>
+
+    <div class="p-0" >
+      <h4>Form Data</h4>
+      <pre
+        class="code"
+      ><code class="code" v-html="JSON.stringify(formData, null, 2)"></code></pre>
     </div>
   </div>
 </template>
@@ -82,15 +88,20 @@ export default {
   data: () => ({
     formData: null,
     isShowDevNote: false,
-    isRenderer: false,
+    isRenderer: true,
     formInputData: null,
     isShowData: false,
+    reference:{name: "reference"}
   }),
+  created() {
+  this.setData();
+  },
+
   methods: {
     getData() {
       console.log(JSON.stringify(this.formData));
     },
-    exportConfig(){
+    exportConfig() {
       console.log(JSON.stringify(this.formData));
     },
 
@@ -101,10 +112,23 @@ export default {
     setData() {
       this.formData = Object.assign({}, DEMO_FORM_DATA);
     },
+    test(input, str, output) {
+      //  input = { he: 600, we: 700, bm: 0 };
+      // str = "[he]*[we]";
+      // output="bmi"
+
+      const matches = str.match(/\[\w*/g).map((item) => item + "]");
+      matches.forEach((match) => {
+        const key = match.replace("[", "").replace("]", "");
+        str = str.replace(match, input[`${key}`]);
+      });
+      input[output] = eval(str);
+      return input;
+    },
 
     viewRenderer() {
       if (!this.isRenderer) {
-        //this.setData();
+      //  this.setData();
         this.isRenderer = true;
         return;
       }
@@ -128,7 +152,8 @@ export default {
           endDate: faker.date.future(),
         },
         total_value: faker.finance.amount(),
-      });
+      }
+      );
     },
   },
 };
@@ -139,6 +164,7 @@ export default {
   margin-top: 10px !important;
   padding-left: 50px !important;
 }
+
 pre {
   background: #333;
   white-space: pre;

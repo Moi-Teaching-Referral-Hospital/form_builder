@@ -1,44 +1,82 @@
 <template>
-    <div class="table-section">
-        <div class="headline-block p5" v-show="section.isShowHeadline">
-            <h2 :class="section.headlineAdditionalClass" v-text="section.headline"></h2>
-            <p :class="section.subHeadlineAdditionalClass" v-text="section.subHeadline"></p>
-        </div>
-
-        <div class="table-wrapper">
-            <table :class="styles.TABLE.TABLE_CLASS">
-                <!--- TODO: Sortable --->
-
-                <TableRowView v-for="(rowId) in section.rows"
-                              :key="rowId"
-                              :section="section"
-                              :row="rows[rowId]" />
-
-                <tr>
-                    <td colspan="2">
-                        <AddRowControl @addRowNotify="addRow" />
-                    </td>
-                </tr>
-            </table>
-        </div>
+  <div class="table-section">
+  
+    <div class="headline-block p5" v-show="section.isShowHeadline">
+      <h2
+        :class="section.headlineAdditionalClass"
+        v-text="section.headline"
+      ></h2>
+      <p
+        :class="section.subHeadlineAdditionalClass"
+        v-text="section.subHeadline"
+      ></p>
     </div>
+
+    <div class="table-wrapper">
+      <FullTableRowRenderView
+        :key="'123'"
+        :section="section"
+        :parent="parent"
+        :reference="reference"
+        :loaded="loaded"
+        :valueContainer="valueContainer"
+         @items="loadItems"
+         :readOnly="readonly"
+    
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-    import {SECTION_VIEW_MIXINS} from "@/mixins/section-view-mixins";
-    import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
-    import AddRowControl from "@/views/builder/add-controls/AddRowControl";
-    import TableRowView from "@/views/builder/row-views/TableRowView";
+import { SECTION_VIEW_MIXINS } from "@/mixins/section-view-mixins";
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
+import AddRowControl from "@/views/builder/add-controls/AddRowControl";
+import FullTableRowRenderView from "@/views/builder/row-views/FullTableRowRenderView";
+import {RENDERER_SECTION_VIEW_MIXIN} from "@/mixins/renderer-section-view-mixin";
+import {
+  getList,
+} from "@/services/frappe";
 
-    export default {
-        name: "TableSectionView",
-        components: {TableRowView, AddRowControl},
-        mixins: [SECTION_VIEW_MIXINS, STYLE_INJECTION_MIXIN],
-        methods: {
-        }
+export default {
+  name: "TableSectionView",
+  components: { FullTableRowRenderView, AddRowControl },
+  mixins: [SECTION_VIEW_MIXINS, STYLE_INJECTION_MIXIN,RENDERER_SECTION_VIEW_MIXIN],
+  methods: {
+    getTableData() {
+      const doctype = "Mtrh Forms Repository";
+      const parent_repo = this.parent;
+      const form_name = this.section.referenceTable;
+      let formData = {
+        doctype,
+        filters: { parent_repo, form_name },
+        fields: ["*"],
+        order_by: "creation desc",
+        page: 1,
+        start: 0,
+        limit: 20,
+      };
+      getList(formData).then((response) => {
+        this.loaded = response.message.map(item => { return JSON.parse(item.form_content)});
+      });
+    },loadItems(val){
+       this.section.childTable = val;
     }
+  },
+  props: {
+    parent: String,
+  },
+  data() {
+      return {
+          loaded:[]
+      }
+  },
+  mounted() {
+    if (this.parent) {
+      this.getTableData();
+    }
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
