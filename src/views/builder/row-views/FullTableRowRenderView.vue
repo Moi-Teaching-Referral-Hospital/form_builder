@@ -1,6 +1,8 @@
 <template>
   <div>
     <div>
+    
+  
       <b-table
         style="width: 100%"
         :empty-text="`Items will be show here`"
@@ -13,16 +15,23 @@
         head-row-variant="secondary"
         :sticky-header="'62vh'"
         responsive
+        small
         ref="selectableTable"
         selectable
         @row-selected="onRowSelected"
         select-mode="single"
         hover
-      />
+      >
+       <template #head()="data">
+        <span  v-if="data.label">{{ data.label.split('-')[1] }}</span>
+      </template>
+      </b-table>
     </div>
-    <b-modal :id="section.referenceTable" hide-footer size="xl">
+    <b-modal :id="tableId" hide-footer size="xl">
       <FormRenderer :form-configuration="formData" v-model="formInputData" />
-      <b-button variant="primary" class="mt-3" block @click="save()">
+      <b-button variant="primary" class="mt-3" block @click="save()"
+      size="sm"
+      >
         Save
       </b-button>
     </b-modal>
@@ -31,8 +40,8 @@
       <b-button
         variant="primary"
         id="show-btn"
-        @click="$bvModal.show(section.referenceTable)"
-        v-if="!readOnly"
+        @click="$bvModal.show(tableId)"
+        v-if="!readOnly && !readonly"
         >Add Row</b-button
       >
     </div>
@@ -42,7 +51,7 @@
 <script>
 import { TABLE_VIEW_MIXIN } from "@/mixins/table-view-mixin";
 import { getFormConfiguration, saveFormData, notify } from "@/services/frappe";
-import AddControlControl from "@/views/builder/add-controls/AddControlControl";
+import  AddControlControl from "@/views/builder/add-controls/AddControlControl";
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
 
 export default {
@@ -55,8 +64,10 @@ export default {
     }
   },
   props: {
+    reference: Object,
     parent: String,
     loaded: { type: Array, default: [] },
+    readonly: {type: Boolean,default:false},
     valueContainer: { type: Object, required: false },
   },
   watch: {
@@ -67,6 +78,12 @@ export default {
     },
   },
   methods: {
+   
+    getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
     getSave() {
       const data = this.formInputData;
       const returnedTarget = Object.assign({}, data);
@@ -125,8 +142,8 @@ export default {
               control.type === "checkbox")
           ) {
             if (control.items.length) {
-              const erpValueObject = items.find(
-                item.value === this.formInputData[key]
+              const erpValueObject = control.items.find(
+                (item) => item.value === this.formInputData[key]
               );
               const field = this.formData.controls[key].mappedField;
               if (field) {
@@ -176,13 +193,28 @@ export default {
       const form_name = this.formName;
       let doctype = "Mtrh Forms Repository";
       const parent_repo = this.parent;
+      
       let formData = {
         doctype,
         form_content,
         parent_repo,
         form_name,
+         completion_status: "Completed",
+         completed:1,
       };
+
+      if(this.reference){
+       formData.reference_doctype= this.reference.doctype
+       formData.reference_doctype_id= this.reference.doctype_id 
+      }
+
       this.saveForm({ formData });
+    },
+  },
+  computed: {
+    tableId() {
+      const id = `${this.getRandomInt(1, 3000)}`;
+      return id;
     },
   },
   data() {

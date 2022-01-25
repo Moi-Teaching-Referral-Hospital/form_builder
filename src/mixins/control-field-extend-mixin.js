@@ -22,6 +22,7 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
 
         // v-model value
         value: null, // any types
+        readonly: {type: Boolean, default:false}
     },
 
     // global data-field - available to override

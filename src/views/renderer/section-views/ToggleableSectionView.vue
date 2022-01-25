@@ -30,6 +30,7 @@
                              :parent-id="section.uniqueId"
                              :value-container="valueContainer"
                              :validation-errors="validationErrors"
+                             :readonly="readonly"
                 />
             </div>
         </transition>

@@ -1,11 +1,12 @@
 <template>
   <div>
-   <button :id="control.uniqueId"
+  <label v-if="value">{{value.split("/")}}</label>
+   <label v-if="url">{{url}}</label>
+   <b-button :id="control.uniqueId"
             :class="buttonClasses"
             :name="control.name"
-            v-text="control.label"
-            :type="control.buttonType || 'button'"
-            @click="clickedHandle">
+            v-text="url?'Show image':control.label"
+            @click="clickedHandle"></b-button>
   
   </div>
 </template>
@@ -18,34 +19,34 @@ export default {
   mixins: [CONTROL_FIELD_EXTEND_MIXIN],
   data() {
     return {
-      searchValue: "",
-    };
+      url:null
+    }
   },
-
+  computed: {
+    urlVal(){
+      if(this.value){
+        const wordArray = this.value.split("/");
+        if(wordArray.length){
+           return wordArray[wordArray.length -1]
+        }else{
+          return"";
+        }
+      
+      }
+    }
+  },
   methods: {
   clickedHandle() {
-      let me = this;
-      let customer_field = frappe.ui.form.make_control({
-        df: {
-          label: __("Reference"),
-          fieldtype: "Link",
-          fieldname: "reference",
-          options: me.control.searchDocument,
-          placeholder: me.control.placeholderText,
-          onchange: function() {
-            if (this.value) {
-              me.updateValue(this.value)
-            }
-          },
+    const me = this;
+      new frappe.ui.FileUploaderCustom({
+        doctype: me.control.document,
+        docname: me.documentName,
+        on_success(file_doc) {
+          const { file_url, filename } = file_doc;
+           me.updateValue(file_url);
+           me.url = file_url;
         },
-        parent: this.$refs["doctype"],
-        render_input: true,
       });
-      customer_field.toggle_label(false);
-      customer_field.$input.val(me.value);
-      $("#modal-body")
-        .find(".input-max-width")
-        .removeClass("input-max-width");
     },
   },
 };

@@ -27,8 +27,10 @@ import DateControl from "@/views/controls/DateControl";
 import NumberControl from "@/views/controls/NumberControl";
 import DropdownControl from "@/views/controls/DropdownControl";
 import LinkControl from "@/views/controls/LinkControl"
+import AttachmentControl from "@/views/controls/AttachmentControl"
 import HtmlTextControl from "@/views/controls/HtmlTextControl"
 import TimeControl from "@/views/controls/TimeControl"
+import Icd11Control from "@/views/controls/Icd11Control"
 
 // Control-Config-Component
 import TextBlockConfigView from "@/views/control-configs/TextBlockConfigView";
@@ -40,6 +42,7 @@ import DatePickerConfigView from "@/views/control-configs/DatePickerConfigView";
 import TextConfigView from "@/views/control-configs/TextConfigView";
 import DropdownConfigView from "@/views/control-configs/DropdownConfigView";
 import LinkConfigView from "@/views/control-configs/LinkConfigView";
+import AttachmentConfigView from "@/views/control-configs/AttachmentConfigView";
 import TimeConfigView from "@/views/control-configs/TimeConfigView";
 import HtmlTextConfigView from "@/views/control-configs/HtmlTextConfigView";
 
@@ -51,6 +54,17 @@ const CONTROLS = {
 
     // component mapping
     fieldComponent: InputControl,
+
+  },
+  icd11: {
+    name: "Icd11",
+    description: "Icd 11 tool",
+    icon: "editPencil", // Follow ICON in `icon-facade.js` to see how it works.
+
+    // component mapping
+    fieldComponent: Icd11Control,
+    
+
   },
 
   link: {
@@ -61,6 +75,15 @@ const CONTROLS = {
     // component mapping
     fieldComponent: LinkControl,
     configComponent: LinkConfigView,
+  },
+
+  attachment:{
+    name: "Attachment Field",
+    description: "Add attachment",
+    icon: "editPencil", 
+    fieldComponent: AttachmentControl,
+    configComponent: AttachmentConfigView,
+
   },
 
   time: {
@@ -384,14 +407,29 @@ const STATIC_CONTROLS = [
     validations: [],
     text: "",
   },
+  // {
+  //   uniqueId: "control-a4d0e350-b1cf-42ed-bfc4-957655457b0b",
+  //   type: "htmlText",
+  //   name: "Female",
+  //   label: "Female",
+  //   isShowLabel: true,
+  //   placeholderText: "",
+  //   containerClass: "col-md-6 md-layout-item md-size-50",
+  //   additionalContainerClass: "",
+  //   additionalFieldClass: "",
+  //   additionalLabelClass: "",
+  //   defaultValue: "",
+  //   validations: [],
+  //   rows: 3,
+  // },
   {
-    uniqueId: "control-a4d0e350-b1cf-42ed-bfc4-957655457b0b",
-    type: "htmlText",
-    name: "Female",
+    uniqueId: "control-a4d0e350-b1cf-42ed-bfc4sdf-957655457b32b",
+    type: "icd11",
+    name: "Icd 11",
     label: "Female",
     isShowLabel: true,
     placeholderText: "",
-    containerClass: "col-md-6 md-layout-item md-size-50",
+    containerClass: "col-md-12 md-layout-item md-size-100",
     additionalContainerClass: "",
     additionalFieldClass: "",
     additionalLabelClass: "",

@@ -1,14 +1,20 @@
 <template>
-  <div  :style="{  'min-height': ((control.height+130 )||330 ) + 'px' }">
+<div>
+  <div  v-if="!readonly" :style="{  'min-height': ((control.height+130 )||330 ) + 'px' } ">
     <vue-editor
-      v-model="value"
+      
+      :value="value"
+       v-model="value"
       :id="control.uniqueId"
       type="text"
-      :value="value"
-      :name="control.name || control.uniqueId"
+      :name="control.name || control.uniqueId"  
       :placeholder="control.placeholderText"
-      :style="{  'min-height': (control.height ||200 ) + 'px' }"
+      :editor-toolbar="customToolbar"
+      :style="{  'height': (control.height ||200 ) + 'px', 'max-height': ((control.height*3) ||600 ) + 'px'  }"
     />
+  
+  </div>
+  <div v-if="readonly" v-html="value"> </div>
   </div>
 </template>
 
@@ -20,14 +26,24 @@ import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin"
 export default {
   name: "HtlmTextControl",
   mixins: [CONTROL_FIELD_EXTEND_MIXIN],
+  data() {
+    return {
+       customToolbar: [
+      ["bold", "underline"],
+      [{ list: "ordered" }],
+      []
+    ]
+    }
+  },
   components: {
     VueEditor,
   },
-  watch:{
-      value(val){
-          updateValue(val)
-      }
-  }
+ 
+ watch: {
+   value(al){
+     this.updateValue(al)
+   }
+ },
 };
 </script>
 

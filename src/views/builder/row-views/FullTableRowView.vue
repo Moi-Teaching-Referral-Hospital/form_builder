@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>
+    Referencen{{reference}}
       <b-table
         style="width: 100%"
         :empty-text="`Items will be show here`"
@@ -15,10 +16,15 @@
         responsive
         ref="selectableTable"
         selectable
+        small
         @row-selected="onRowSelected"
         select-mode="single"
         hover
-      />
+      >
+        <template #head()="data">
+          <span v-if="data.label">{{ data.label.split("-")[1] }}</span>
+        </template>
+      </b-table>
     </div>
 
     <b-modal id="bv-modal-example" hide-footer size="xl">
@@ -33,6 +39,7 @@
         id="show-btn"
         @click="$bvModal.show('bv-modal-example')"
         v-if="!readOnly"
+        size="sm"
         >Add Row</b-button
       >
     </div>
@@ -41,25 +48,25 @@
 
 <script>
 import { TABLE_VIEW_MIXIN } from "@/mixins/table-view-mixin";
-import { getFormConfiguration,saveFormData } from "@/services/frappe";
+import { getFormConfiguration, saveFormData } from "@/services/frappe";
 import AddControlControl from "@/views/builder/add-controls/AddControlControl";
 
 export default {
   name: "TableRowView",
   components: { AddControlControl },
   mixins: [TABLE_VIEW_MIXIN],
- 
+
   methods: {
     getSave() {
       const data = this.formInputData;
       const returnedTarget = Object.assign({}, data);
       this.items.unshift(returnedTarget);
-      this.clearData()
+      this.clearData();
     },
     setValues(val) {
       this.$set(this, "formInputData", val);
     },
-     clearData() {
+    clearData() {
       const val = {};
       const keys = Object.keys(this.formInputData);
       keys.forEach((key) => {
@@ -80,10 +87,7 @@ export default {
       });
     },
     saveForm(formData) {
-      saveFormData(formData).then((saved) => {      
-        
-       
-      });
+      saveFormData(formData).then((saved) => {});
     },
 
     save() {
@@ -100,6 +104,11 @@ export default {
         reference_doctype,
         reference_doctype_id,
       };
+
+       if(this.reference){
+       formData.reference_doctype= this.reference.doctype
+       formData.reference_doctype_id= this.reference.doctype_id 
+      }
       this.saveForm({ formData });
     },
   },

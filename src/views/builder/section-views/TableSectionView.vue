@@ -7,6 +7,7 @@
  
         <div class="table-wrapper">
              <FullTableRowView :class="styles.TABLE.TABLE_CLASS"
+                              :reference="reference"
                               :section="section"
                               :readOnly="true"
                               />

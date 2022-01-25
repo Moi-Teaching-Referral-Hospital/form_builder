@@ -16,6 +16,8 @@
       <component
         :is="controlComponent"
         :control="control"
+        
+        :readonly="readonly"
         :value-container="valueContainer"
         v-model="valueContainer[controlName]"
         :class="validationErrorClasses"
@@ -62,6 +64,7 @@ export default {
       type: Object,
       default: () => ({}), // empty object
     },
+    readonly:{type: Boolean, default:false}
   },
   data: function() {
     return {

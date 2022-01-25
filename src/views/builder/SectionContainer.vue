@@ -24,6 +24,7 @@
             section: Object,
             rows: Object,
             controls: Object,
+            reference:Object,
         },
         data: () => ({
             isDoingConfiguration: false

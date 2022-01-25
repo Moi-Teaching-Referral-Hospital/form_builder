@@ -1,5 +1,6 @@
 <template>
   <div class="table-section">
+  
     <div class="headline-block p5" v-show="section.isShowHeadline">
       <h2
         :class="section.headlineAdditionalClass"
@@ -16,10 +17,12 @@
         :key="'123'"
         :section="section"
         :parent="parent"
+        :reference="reference"
         :loaded="loaded"
         :valueContainer="valueContainer"
-        @items="loadItems"
-        :readOnly="false"
+         @items="loadItems"
+         :readOnly="readonly"
+    
       />
     </div>
   </div>

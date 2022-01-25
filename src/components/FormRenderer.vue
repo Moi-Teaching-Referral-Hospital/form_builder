@@ -2,6 +2,7 @@
   <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-renderer']">
     
     <!-- Render Form Tag Or Not -->
+
     <form
       v-if="formData.formConfig.renderFormTag"
       :action="formData.formConfig.formActionURL"
@@ -23,6 +24,8 @@
         v-for="sectionData in sortedSections"
         :parent="parent"
         :section="sectionData"
+        :readonly="readonly"
+        :reference="reference"
         :rows="formData.rows"
         :controls="formData.controls"
         :key="sectionData.uniqueId"
@@ -44,6 +47,8 @@
       <SectionContainer
         v-for="sectionData in sortedSections"
         :section="sectionData"
+        :readonly="readonly"
+        :reference="reference"
         :parent="parent"
         :rows="formData.rows"
         :controls="formData.controls"
@@ -51,6 +56,7 @@
         :value-container="valueContainer"
         :validation-errors="validationErrors"
       />
+
     </template>
   </div>
 </template>

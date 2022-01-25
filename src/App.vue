@@ -32,9 +32,7 @@
 
     <hr />
 
-    <FormBuilder v-show="!isRenderer" v-model="formData"></FormBuilder>
-
-    <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
+<div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
       <div class="col-md-12 mb-4">
         <button class="btn btn-success  mr-2" @click="isShowData = !isShowData">
           <span v-show="isShowData">Hide Form Data</span>
@@ -49,10 +47,15 @@
       <FormRenderer
         :class="{ 'col-md-9': isShowData, 'col-md-12': !isShowData }"
         :form-configuration="formData"
+        :reference="reference"
         v-model="formInputData"
+        :readonly="true"
       />
     </div>
 
+    <FormBuilder v-show="!isRenderer" v-model="formData" ></FormBuilder>
+
+    
     <div class="p-0" >
       <h4>Form Input Data</h4>
       <pre
@@ -85,12 +88,13 @@ export default {
   data: () => ({
     formData: null,
     isShowDevNote: false,
-    isRenderer: false,
+    isRenderer: true,
     formInputData: null,
     isShowData: false,
+    reference:{name: "reference"}
   }),
   created() {
-    // this.test();
+  this.setData();
   },
 
   methods: {
@@ -124,7 +128,7 @@ export default {
 
     viewRenderer() {
       if (!this.isRenderer) {
-        //this.setData();
+      //  this.setData();
         this.isRenderer = true;
         return;
       }

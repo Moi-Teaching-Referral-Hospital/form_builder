@@ -21,6 +21,8 @@ const SECTION_VIEW_MIXINS = {
         section: Object,
         rows: Object,
         controls: Object,
+        readonly:{type: Boolean, default:true},
+        reference: Object,
     },
 
     data: () => ({

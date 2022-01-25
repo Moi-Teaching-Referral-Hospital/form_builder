@@ -18,7 +18,8 @@ const TABLE_VIEW_MIXIN = {
             type:Boolean,
             required:false,
             default:true
-        }
+        },
+        reference: Object,
     },
 
 

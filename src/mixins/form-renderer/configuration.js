@@ -12,6 +12,11 @@ const CONFIGURATION = {
       required: true,
     },
     parent: { type: String, default: "Parent" },
+    reference: {type:Object,default:null},
+    readonly: {
+      type: Boolean,
+      required: false,
+    },
   },
 
   watch: {

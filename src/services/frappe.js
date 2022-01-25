@@ -3,8 +3,15 @@ const api = ({ method, args = {} }) =>
     frappe.call({ method, args, callback: resolve })
   );
 
+
+
+export const fetch = ({ method, args = {} }) =>
+  new Promise((resolve, reject) =>
+      frappe.call({ method, type:'GET', args, callback: resolve })
+  );
+
 const getFormConfiguration = ({ name = "" }) =>
-  api({
+  fetch({
     method: "clinical.api.forms.form_builder.get_form_configuration",
     args: {
       name,
