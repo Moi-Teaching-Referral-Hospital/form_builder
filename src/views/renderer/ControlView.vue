@@ -16,6 +16,8 @@
       <component
         :is="controlComponent"
         :control="control"
+        
+        :readonly="readonly"
         :value-container="valueContainer"
         v-model="valueContainer[controlName]"
         :class="validationErrorClasses"
@@ -62,6 +64,7 @@ export default {
       type: Object,
       default: () => ({}), // empty object
     },
+    readonly:{type: Boolean, default:false}
   },
   data: function() {
     return {
@@ -70,22 +73,7 @@ export default {
       lookUpValue: null,
     };
   },
-  created() {
-    if (true) {
-    //   this.control.depends = "name=philip";
-      if (this.control.depends) {
-        if (this.control.depends.includes("=")) {
-          const result = this.control.depends.split("=");
-          this.lookUpField = result[0];
-          this.lookUpValue = result[1];
-        //   const currentFieldValue = this.valueContainer[lookUpField];
-        //   this.isVisible = currentFieldValue === lookUpvalue;
-        }else{
-             this.lookUpValue = 'default';
-        }
-      }
-    }
-  },
+
 
   computed: {
     /**
@@ -135,12 +123,6 @@ export default {
       return classes;
     },
   },
-  watch: {
-    valueContainer: function(n, o) {
-      console.log(n);
-      console.log(o);
-      this.control.depends = "name=philip3";
-    },
-  },
+  
 };
 </script>

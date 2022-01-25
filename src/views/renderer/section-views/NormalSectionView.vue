@@ -8,6 +8,7 @@
         <div :class="containerClasses">
             <ControlView v-for="controlId in section.controls"
                          :key="controlId"
+                         :readonly="readonly"
                          :control="controls[controlId]"
                          :parent-id="section.uniqueId"
                          :value-container="valueContainer"
