@@ -191,7 +191,7 @@ export default {
       let form_content = this.formInputData;
       form_content = JSON.stringify(form_content);
       const form_name = this.formName;
-      let doctype = "Mtrh Forms Repository";
+      let doctype = "Form Repository";
       const parent_repo = this.parent;
       
       let formData = {

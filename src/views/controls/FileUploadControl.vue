@@ -28,7 +28,7 @@ export default {
      uploadFile() {
       const me = this;
       new frappe.ui.FileUploaderCustom({
-        doctype: "Mtrh Forms Repository",
+        doctype: "Form Repository",
         docname: me.parentId,
         on_success(file_doc) {      
           const { file_url, filename } = file_doc;

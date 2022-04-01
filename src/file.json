@@ -1,0 +1,1730 @@
+{
+	"formConfig": {
+		"headline": "",
+		"subHeadline": "",
+		"isShowHeadline": false,
+		"formula": [],
+		"renderFormTag": false,
+		"formActionURL": "",
+		"formMethod": "POST",
+		"mappedDoctype": ""
+	},
+	"sections": {
+		"section-ae847c2b-4086-4f2e-a47c-af448e784587": {
+			"uniqueId": "section-ae847c2b-4086-4f2e-a47c-af448e784587",
+			"headline": "Presenting Complaints",
+			"headlineAdditionalClass": "",
+			"subHeadline": "Click",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 2,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": "Presenting Complaints"
+		},
+		"section-307b7331-0e28-4f00-afb8-854a18195d45": {
+			"uniqueId": "section-307b7331-0e28-4f00-afb8-854a18195d45",
+			"headline": "1. Preliminary Diagnosis",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 1,
+			"type": "normal",
+			"rows": [],
+			"controls": [],
+			"referenceTable": " "
+		},
+		"section-145b2b2b-98de-4aad-8d50-7265aeb0bb5b": {
+			"uniqueId": "section-145b2b2b-98de-4aad-8d50-7265aeb0bb5b",
+			"headline": "2. History Of Presenting Illness",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 3,
+			"type": "normal",
+			"rows": [],
+			"controls": ["DC-History of Presenting Illness-320623", "DC-Hospitalization in the past-320647", "DC-Reason for hospitalization-320668", "DC-Blood transfusion in the past -320715", "DC-Reason for blood transfusion -320744"],
+			"referenceTable": " "
+		},
+		"section-2a166171-269c-4336-9ab7-a67ee519d8a7": {
+			"uniqueId": "section-2a166171-269c-4336-9ab7-a67ee519d8a7",
+			"headline": "Existing medical condition(s)",
+			"headlineAdditionalClass": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 4,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": "Existing Medical Condition(s)"
+		},
+		"section-f8dc7433-80f9-4742-b310-441a9f77a608": {
+			"uniqueId": "section-f8dc7433-80f9-4742-b310-441a9f77a608",
+			"headline": "",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 5,
+			"type": "normal",
+			"rows": [],
+			"controls": ["DC-Patient taken medication in the past-320910", "DC-Medications Taken In The Past-338044", "DC-Surgical Procedure -338318", "DC-Reason For Surgery -338804"],
+			"referenceTable": " "
+		},
+		"section-76a915cf-9584-4a3a-8d94-dad8639b412e": {
+			"uniqueId": "section-76a915cf-9584-4a3a-8d94-dad8639b412e",
+			"headline": "Physical Examination Findings",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 8,
+			"type": "normal",
+			"rows": [],
+			"controls": ["DC-General Examination -333705", "DC-Gait examination findings-339013", "DC-Facial Examination Findings-333406", "DC-Eye Examination Findings-333393", "DC-Mouth Region Examination Findings-340454", "DC-Neck Examination Findings-339926", "DC-Hands and Arms Examination Findings-339940", "DC-Skin Examination Findings -340178", "DC-Leg Examination Findings -340479", "DC-Lymph Node Examination Findings -340501", "DC-Developmental Examination Findings -340521", "DC-ICD 11 -260710"],
+			"referenceTable": " "
+		},
+		"section-206c50fa-4c79-4006-92d4-9fc34dc3162e": {
+			"uniqueId": "section-206c50fa-4c79-4006-92d4-9fc34dc3162e",
+			"headline": "Medication Allergies",
+			"headlineAdditionalClass": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 6,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": "Drug Allergies Form"
+		},
+		"section-40c6d7cd-855d-40fa-a8d0-a4a8972d2073": {
+			"uniqueId": "section-40c6d7cd-855d-40fa-a8d0-a4a8972d2073",
+			"headline": "Family Socioeconomic History",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 7,
+			"type": "normal",
+			"rows": [],
+			"controls": ["DC-Occupation-293796", "DC-Marital Status-293640", "DC-Number of Chidlren-342213", "DC-Death In The Family-331095", "DC-Cause Of Death-331236", "DC-Chronic Illness-331409", "DC-Substance Abuse-331748", "DC-History Of Tobacco Abuse-331909", "DC-Number Of Packs -331961", "DC-History Of Alcohol Abuse-331974", "DC-Drug Abused-332008", "DC-Availability Of Sanitation-332699", "DC-Source Of Water-332717", "DC-Type Of Human Waste Disposal Facility-332750", "DC-Garbage Disposal Method-332884"],
+			"referenceTable": " "
+		},
+		"section-44d62132-31dc-49d1-bb24-235bfa2e7065": {
+			"uniqueId": "section-44d62132-31dc-49d1-bb24-235bfa2e7065",
+			"headline": "Systemic Review/Assessment",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 9,
+			"type": "normal",
+			"rows": [],
+			"controls": ["DC-Eye Open-341822", "DC-Best Mental Response-341903", "DC-Best Verbal -342117", "DC-Glasgow Coma Scale-341804"],
+			"referenceTable": " "
+		},
+		"section-6cb3b8e3-ef12-4e2f-a3d3-1e92fd0cfd0c": {
+			"uniqueId": "section-6cb3b8e3-ef12-4e2f-a3d3-1e92fd0cfd0c",
+			"headline": "Pupil Gauge",
+			"headlineAdditionalClass": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 10,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": "Pupil Gauge"
+		},
+		"section-e199f63a-ce2b-474d-85cb-01db95b70beb": {
+			"uniqueId": "section-e199f63a-ce2b-474d-85cb-01db95b70beb",
+			"headline": "Extremities",
+			"headlineAdditionalClass": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 11,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": "Extremities"
+		},
+		"section-42fa14d3-c4f2-4d10-ba9b-8123146538da": {
+			"uniqueId": "section-42fa14d3-c4f2-4d10-ba9b-8123146538da",
+			"headline": "Reflexes",
+			"headlineAdditionalClass": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 12,
+			"type": "table",
+			"rows": [],
+			"controls": [],
+			"referenceTable": " "
+		},
+		"section-6729e570-dc8b-4ee0-9f12-3bd0716f8462": {
+			"uniqueId": "section-6729e570-dc8b-4ee0-9f12-3bd0716f8462",
+			"headline": "",
+			"headlineAdditionalClass": "",
+			"subHeadline": "",
+			"subHeadlineAdditionalClass": "",
+			"isShowHeadline": true,
+			"condition": "",
+			"tableReference": "",
+			"sortOrder": 13,
+			"type": "normal",
+			"rows": [],
+			"controls": [ "DC-Descriptive Terms-343207", "DC-Systemic Review Notes-348402", "DC-Airway Respiratory Assessment -343305", "DC-Respiration-343405", "DC-Breathing Sounds-343456", "DC-Oxygen Saturation-295677", "DC-Oxygen Adminstration-343479", "DC-Mode Of Oxygen  Administration -343536"],
+			"referenceTable": " "
+		}
+	},
+	"rows": {},
+	"controls": {
+		"DC-History of Presenting Illness-320623": {
+			"uniqueId": "DC-History of Presenting Illness-320623",
+			"type": "text",
+			"name": "DC-History of Presenting Illness-320623",
+			"label": "History of presenting illness (notes)",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"rows": 3,
+			"depends": ""
+		},
+		"DC-Reason for hospitalization-320668": {
+			"uniqueId": "DC-Reason for hospitalization-320668",
+			"type": "text",
+			"name": "DC-Reason for hospitalization-320668",
+			"label": "Reason for hospitalization",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-9 md-layout-item md-size-75",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"rows": 3,
+			"depends": ""
+		},
+		"DC-Hospitalization in the past-320647": {
+			"uniqueId": "DC-Hospitalization in the past-320647",
+			"type": "radio",
+			"name": "DC-Hospitalization in the past-320647",
+			"label": "Hospitalization in the past ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-3 md-layout-item md-size-25",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}, {
+				"text": "Not applicable",
+				"value": "DC-Not Applicable-319407"
+			}],
+			"depends": ""
+		},
+		"DC-Blood transfusion in the past -320715": {
+			"uniqueId": "DC-Blood transfusion in the past -320715",
+			"type": "radio",
+			"name": "DC-Blood transfusion in the past -320715",
+			"label": "Previous blood transfusion",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-3 md-layout-item md-size-25",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}, {
+				"text": "Not applicable",
+				"value": "DC-Not Applicable-319407"
+			}],
+			"depends": ""
+		},
+		"DC-Reason for blood transfusion -320744": {
+			"uniqueId": "DC-Reason for blood transfusion -320744",
+			"type": "text",
+			"name": "DC-Reason for blood transfusion -320744",
+			"label": "Reason for blood transfusion ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-9 md-layout-item md-size-75",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"rows": 3,
+			"depends": ""
+		},
+		"DC-Patient taken medication in the past-320910": {
+			"uniqueId": "DC-Patient taken medication in the past-320910",
+			"type": "radio",
+			"name": "DC-Patient taken medication in the past-320910",
+			"label": "Patient taken medication in the past",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}],
+			"depends": ""
+		},
+		"DC-Medications Taken In The Past-338044": {
+			"uniqueId": "DC-Medications Taken In The Past-338044",
+			"type": "radio",
+			"name": "DC-Medications Taken In The Past-338044",
+			"label": "Previous treatment or medications indicate ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Antifungal",
+				"value": "DC-Antifungal-338263"
+			}, {
+				"text": "Minerals supplements",
+				"value": "DC-Mineral Drug Supplements-338177"
+			}, {
+				"text": "Antibiotics",
+				"value": "DC-Antibiotics-338190"
+			}, {
+				"text": "Antihypertensive",
+				"value": "DC-Antihypertensive -338265"
+			}, {
+				"text": "Antidiabetic",
+				"value": "DC-Antidiabetic -338278"
+			}, {
+				"text": "Anticancer",
+				"value": "DC-Anticancer-338274"
+			}, {
+				"text": "Herbal Traditional Medication",
+				"value": "DC-Herbal Traditional Medication-338287"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Surgical Procedure -338318": {
+			"uniqueId": "DC-Surgical Procedure -338318",
+			"type": "checkbox",
+			"name": "DC-Surgical Procedure -338318",
+			"label": "Type of surgery",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Neuro",
+				"value": "DC-Neurosurgery-338339"
+			}, {
+				"text": "Obsterics",
+				"value": "DC-Obstetric Surgery-338349"
+			}, {
+				"text": "General",
+				"value": "DC-General Surgery-338661"
+			}, {
+				"text": "Cardiothoracic",
+				"value": "DC-Cardiothoracic Surgery-338691"
+			}, {
+				"text": "Orthopedics",
+				"value": "DC-Orthopedics Surgery-338709"
+			}, {
+				"text": "Plastic ",
+				"value": "DC-Plastic Surgery-338778"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Reason For Surgery -338804": {
+			"uniqueId": "DC-Reason For Surgery -338804",
+			"type": "htmlText",
+			"name": "DC-Reason For Surgery -338804",
+			"label": "Reason for surgery ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"depends": ""
+		},
+		"DC-General Examination -333705": {
+			"uniqueId": "DC-General Examination -333705",
+			"type": "checkbox",
+			"name": "DC-General Examination -333705",
+			"label": "General body assessment ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Wasting",
+				"value": "DC-Wasting Disease-333699"
+			}, {
+				"text": "Obesity",
+				"value": "DC-Obesity-333703"
+			}, {
+				"text": "Dehydrated",
+				"value": "DC-Dehydration-333392"
+			}, {
+				"text": "Psychosis",
+				"value": "DC-Mental Disability-330964"
+			}, {
+				"text": "Sick looking",
+				"value": "DC-Sick-331173"
+			}, {
+				"text": "Dull",
+				"value": "DC-Dull-338981"
+			}, {
+				"text": "Quite",
+				"value": "DC-Quite-338983"
+			}, {
+				"text": "Consciousness ",
+				"value": "DC-Consciousness -339006"
+			}, {
+				"text": "Weak",
+				"value": "DC-Weak-338994"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-ICD 11 -260710": {
+			"uniqueId": "DC-ICD 11 -260710",
+			"type": "icd11",
+			"name": "DC-ICD 11 -00135",
+			"label": "Provisional Diagnosis",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"rows": 3,
+			"depends": ""
+		},
+		"DC-Occupation-293796": {
+			"uniqueId": "DC-Occupation-293796",
+			"type": "link",
+			"name": "DC-Occupation-293796",
+			"label": "Occupation ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"rows": 3,
+			"depends": ""
+		},
+		"DC-Marital Status-293640": {
+			"uniqueId": "DC-Marital Status-293640",
+			"type": "radio",
+			"name": "DC-Marital Status-293640",
+			"label": "Marital Status",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-9 md-layout-item md-size-75",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Single",
+				"value": "DC-Single-260669"
+			}, {
+				"text": "Divorced",
+				"value": "DC-Divorced-260671"
+			}, {
+				"text": "Widowed",
+				"value": "DC-Widow-293734"
+			}, {
+				"text": "Married",
+				"value": "DC-Married-260670"
+			}, {
+				"text": "Separated",
+				"value": "DC-Separated-293736"
+			}],
+			"depends": ""
+		},
+		"DC-Number of Chidlren-342213": {
+			"uniqueId": "DC-Number of Chidlren-342213",
+			"type": "number",
+			"name": "DC-Number of Chidlren-342213",
+			"label": "Number of children ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-3 md-layout-item md-size-25",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"isReal": false,
+			"decimalPlace": 1,
+			"depends": ""
+		},
+		"DC-Death In The Family-331095": {
+			"uniqueId": "DC-Death In The Family-331095",
+			"type": "radio",
+			"name": "DC-Death In The Family-331095",
+			"label": "Any deaths in the family",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-5 md-layout-item md-size-40",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}],
+			"depends": ""
+		},
+		"DC-Cause Of Death-331236": {
+			"uniqueId": "DC-Cause Of Death-331236",
+			"type": "checkbox",
+			"name": "DC-Cause Of Death-331236",
+			"label": "Cause of death in the family",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-7 md-layout-item md-size-60",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Suicide",
+				"value": "DC-Suicide-331162"
+			}, {
+				"text": "Accident",
+				"value": "DC-Accident-331169"
+			}, {
+				"text": "Sickness",
+				"value": "DC-Sick-331173"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Chronic Illness-331409": {
+			"uniqueId": "DC-Chronic Illness-331409",
+			"type": "checkbox",
+			"name": "DC-Chronic Illness-331409",
+			"label": "Chronic illness in the family",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Breast Cancer",
+				"value": "DC-Breast Cancer-330685"
+			}, {
+				"text": "Cervical cancer",
+				"value": "DC-Cervical Cancer-330701"
+			}, {
+				"text": "Uterine cancer",
+				"value": "DC-Uterine Cancer-330706"
+			}, {
+				"text": "Asthma",
+				"value": "DC-Asthma-331456"
+			}, {
+				"text": "Mood disorder",
+				"value": "DC-Bipolar Mood Disorder-331469"
+			}, {
+				"text": "Colon cancer",
+				"value": "DC-Colon Cancer-331530"
+			}, {
+				"text": "Colon Polyps",
+				"value": "DC-Colon Polyps-331570"
+			}, {
+				"text": "Depression",
+				"value": "DC-Depression -331622"
+			}, {
+				"text": "Diabetes",
+				"value": "DC-Diabetes-331630"
+			}, {
+				"text": "Heart attack",
+				"value": "DC-Heart Attack-331653"
+			}, {
+				"text": "High blood pressure",
+				"value": "DC-Hypertension-299108"
+			}, {
+				"text": "Prostate Cancer",
+				"value": "DC-Prostate Cancer-331682"
+			}, {
+				"text": "Skin problems",
+				"value": "DC-Skin problems-331692"
+			}, {
+				"text": "Stroke",
+				"value": "DC-Stroke-331733"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Substance Abuse-331748": {
+			"uniqueId": "DC-Substance Abuse-331748",
+			"type": "checkbox",
+			"name": "DC-Substance Abuse-331748",
+			"label": "Substance abuse",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-5 md-layout-item md-size-40",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Tobacco",
+				"value": "DC-Tobacco-331815"
+			}, {
+				"text": "Alcohol",
+				"value": "DC-Alcohol-331819"
+			}, {
+				"text": "Drugs",
+				"value": "DC-Drug Use-331844"
+			}],
+			"depends": ""
+		},
+		"DC-History Of Tobacco Abuse-331909": {
+			"uniqueId": "DC-History Of Tobacco Abuse-331909",
+			"type": "checkbox",
+			"name": "DC-History Of Tobacco Abuse-331909",
+			"label": "History Of Tobacco Abuse",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Smoker",
+				"value": "DC-Smoker-331942"
+			}, {
+				"text": "Former smoker",
+				"value": "DC-Former Smoker-331948"
+			}],
+			"depends": ""
+		},
+		"DC-Number Of Packs -331961": {
+			"uniqueId": "DC-Number Of Packs -331961",
+			"type": "number",
+			"name": "DC-Number Of Packs -331961",
+			"label": "Number of packs per day",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"isReal": false,
+			"decimalPlace": 1,
+			"depends": ""
+		},
+		"DC-History Of Alcohol Abuse-331974": {
+			"uniqueId": "DC-History Of Alcohol Abuse-331974",
+			"type": "radio",
+			"name": "DC-History Of Alcohol Abuse-331974",
+			"label": "Alcohol",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Frequent drinker",
+				"value": "DC-Frequent Drinker-331973"
+			}, {
+				"text": "Never drank",
+				"value": "DC-Never drank -331982"
+			}],
+			"depends": ""
+		},
+		"DC-Availability Of Sanitation-332699": {
+			"uniqueId": "DC-Availability Of Sanitation-332699",
+			"type": "radio",
+			"name": "DC-Availability Of Sanitation-332699",
+			"label": "Availability of sanitation ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-3 md-layout-item md-size-25",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}],
+			"depends": ""
+		},
+		"DC-Drug Abused-332008": {
+			"uniqueId": "DC-Drug Abused-332008",
+			"type": "checkbox",
+			"name": "DC-Drug Abused-332008",
+			"label": "Drug abused",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Amphetamines",
+				"value": "DC-Amphetamines-332557"
+			}, {
+				"text": "Barbiturates",
+				"value": "DC-Barbiturates-332572"
+			}, {
+				"text": "Cocaine ",
+				"value": "DC-Cocaine -332583"
+			}, {
+				"text": "Heroin",
+				"value": "DC-Heroin-332604"
+			}, {
+				"text": "LSD",
+				"value": "DC-Lysergic Acid Diethylamide-332635"
+			}, {
+				"text": "Marijuana",
+				"value": "DC-Marijuana-332667"
+			}, {
+				"text": "Prescription drugs",
+				"value": "DC-Prescription Drugs -332669"
+			}],
+			"depends": ""
+		},
+		"DC-Source Of Water-332717": {
+			"uniqueId": "DC-Source Of Water-332717",
+			"type": "checkbox",
+			"name": "DC-Source Of Water-332717",
+			"label": "Water",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Bore Hole",
+				"value": "DC-Bore Hole-332735"
+			}, {
+				"text": "Tap water",
+				"value": "DC-Tap Water-332738"
+			}],
+			"depends": ""
+		},
+		"DC-Type Of Human Waste Disposal Facility-332750": {
+			"uniqueId": "DC-Type Of Human Waste Disposal Facility-332750",
+			"type": "checkbox",
+			"name": "DC-Type Of Human Waste Disposal Facility-332750",
+			"label": "Toilet",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-5 md-layout-item md-size-40",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Pit Latrine",
+				"value": "DC-Pit Latrine-332754"
+			}, {
+				"text": "House toilet",
+				"value": "DC-Pour Flush Water Latrine-332766"
+			}, {
+				"text": "Forest",
+				"value": "DC-Forest-332773"
+			}],
+			"depends": ""
+		},
+		"DC-Garbage Disposal Method-332884": {
+			"uniqueId": "DC-Garbage Disposal Method-332884",
+			"type": "checkbox",
+			"name": "DC-Garbage Disposal Method-332884",
+			"label": "Waste disposal",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Landfill",
+				"value": "DC-Landfill-332915"
+			}, {
+				"text": "Composting",
+				"value": "DC-Composting-332898"
+			}, {
+				"text": "Recycling ",
+				"value": "DC-Recycling-332902"
+			}, {
+				"text": "Incineration",
+				"value": "DC-Incineration -332975"
+			}],
+			"depends": ""
+		},
+		"DC-Gait examination findings-339013": {
+			"uniqueId": "DC-Gait examination findings-339013",
+			"type": "checkbox",
+			"name": "DC-Gait examination findings-339013",
+			"label": "Gait",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Hemiplegic",
+				"value": "DC-Hemiplegic Gait-340773"
+			}, {
+				"text": "Diplegic",
+				"value": "DC-Diplegic Gait-340791"
+			}, {
+				"text": "Mypoathic ",
+				"value": "DC-Mypoathic Gait-340799"
+			}, {
+				"text": "Ataxic",
+				"value": "DC-Ataxic Gait-341200"
+			}, {
+				"text": "Sensory",
+				"value": "DC-Sensory Gait-341207"
+			}, {
+				"text": "Neuropathic",
+				"value": "DC-Neuropathic Gait-341222"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Facial Examination Findings-333406": {
+			"uniqueId": "DC-Facial Examination Findings-333406",
+			"type": "checkbox",
+			"name": "DC-Facial Examination Findings-333406",
+			"label": "Face",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Dry skin",
+				"value": "DC-Dry Skin-333415"
+			}, {
+				"text": "Scaly ",
+				"value": "DC-Scaly-333421"
+			}, {
+				"text": "Puffy",
+				"value": "DC-Puffy-333441"
+			}, {
+				"text": "Jaundice",
+				"value": "DC-Jaundice-329519"
+			}, {
+				"text": "Pallor",
+				"value": "DC-Pallor-333359"
+			}, {
+				"text": "Oedema",
+				"value": "DC-Oedema-329498"
+			}, {
+				"text": "Sick looking",
+				"value": "DC-Sick-331173"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Eye Examination Findings-333393": {
+			"uniqueId": "DC-Eye Examination Findings-333393",
+			"type": "checkbox",
+			"name": "DC-Eye Examination Findings-333393",
+			"label": "Eye ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-5 md-layout-item md-size-40",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Pallor",
+				"value": "DC-Pallor-333359"
+			}, {
+				"text": "Jaundice",
+				"value": "DC-Jaundice-329519"
+			}, {
+				"text": "Dehydration ",
+				"value": "DC-Dehydration-333392"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Mouth Region Examination Findings-340454": {
+			"uniqueId": "DC-Mouth Region Examination Findings-340454",
+			"type": "checkbox",
+			"name": "DC-Mouth Region Examination Findings-340454",
+			"label": "Mouth",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-3 md-layout-item md-size-25",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Sore",
+				"value": "DC-Mouth Sores-339878"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Neck Examination Findings-339926": {
+			"uniqueId": "DC-Neck Examination Findings-339926",
+			"type": "checkbox",
+			"name": "DC-Neck Examination Findings-339926",
+			"label": "Neck",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Scar",
+				"value": "DC-Scar-341273"
+			}, {
+				"text": "Masses",
+				"value": "DC-Mass-341297"
+			}, {
+				"text": "Edema",
+				"value": "DC-Oedema-329498"
+			}],
+			"depends": ""
+		},
+		"DC-Hands and Arms Examination Findings-339940": {
+			"uniqueId": "DC-Hands and Arms Examination Findings-339940",
+			"type": "checkbox",
+			"name": "DC-Hands and Arms Examination Findings-339940",
+			"label": "Hands and arms",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Edema",
+				"value": "DC-Oedema-329498"
+			}, {
+				"text": "Fracture",
+				"value": "DC-Fracture-340467"
+			}, {
+				"text": "Weakness",
+				"value": "DC-Weak-338994"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Skin Examination Findings -340178": {
+			"uniqueId": "DC-Skin Examination Findings -340178",
+			"type": "checkbox",
+			"name": "DC-Skin Examination Findings -340178",
+			"label": "Skin examination findings",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Macules",
+				"value": "DC-Macules-341340"
+			}, {
+				"text": "Patch",
+				"value": "DC-Patch-341364"
+			}, {
+				"text": "Blister",
+				"value": "DC-Blister-341378"
+			}, {
+				"text": "Abscess",
+				"value": "DC-Abscess-341381"
+			}, {
+				"text": "Erythema",
+				"value": "DC-Erythema-341382"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Leg Examination Findings -340479": {
+			"uniqueId": "DC-Leg Examination Findings -340479",
+			"type": "checkbox",
+			"name": "DC-Leg Examination Findings -340479",
+			"label": "Leg",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Oedema",
+				"value": "DC-Oedema-329498"
+			}, {
+				"text": "Fracture",
+				"value": "DC-Fracture-340467"
+			}, {
+				"text": "Weakness",
+				"value": "DC-Weak-338994"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Lymph Node Examination Findings -340501": {
+			"uniqueId": "DC-Lymph Node Examination Findings -340501",
+			"type": "checkbox",
+			"name": "DC-Lymph Node Examination Findings -340501",
+			"label": "Lymph Node Examination Findings ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-5 md-layout-item md-size-40",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Oedema",
+				"value": "DC-Oedema-329498"
+			}, {
+				"text": "Soft Node",
+				"value": "DC-Soft Node-341386"
+			}, {
+				"text": "Hard",
+				"value": "DC-Hard-341387"
+			}, {
+				"text": "Tender",
+				"value": "DC-Tender-341391"
+			}, {
+				"text": "Mobility",
+				"value": "DC-Mobility-341403"
+			}, {
+				"text": "Tethered",
+				"value": "DC-Tethered-341421"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Developmental Examination Findings -340521": {
+			"uniqueId": "DC-Developmental Examination Findings -340521",
+			"type": "checkbox",
+			"name": "DC-Developmental Examination Findings -340521",
+			"label": "Developmental Examination Findings ",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-7 md-layout-item md-size-60",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "bothSide",
+			"position": "left",
+			"items": [{
+				"text": "Normal",
+				"value": "DC-Normal-317743"
+			}, {
+				"text": "Cognition",
+				"value": "DC-Cognition-341447"
+			}, {
+				"text": "Communication",
+				"value": "DC-Communication-341454"
+			}, {
+				"text": "Behavior",
+				"value": "DC-Behavior-341462"
+			}, {
+				"text": "Social Interaction ",
+				"value": "DC-Social Interaction -341471"
+			}, {
+				"text": "Motor sensory ability",
+				"value": "DC-Motor Sensory Ability-341476"
+			}, {
+				"text": "Adaptive skills",
+				"value": "DC-Adaptive Skills-341483"
+			}, {
+				"text": "Other",
+				"value": "DC-Other-294708"
+			}],
+			"depends": ""
+		},
+		"DC-Eye Open-341822": {
+			"uniqueId": "DC-Eye Open-341822",
+			"type": "radio",
+			"name": "DC-Eye Open-341822",
+			"label": "Eye Open",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "None - 1",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Spontaneous - 4",
+				"value": "DC-Spontaneous-341832"
+			}, {
+				"text": "To speech - 3",
+				"value": "DC-To Speech-341843"
+			}, {
+				"text": "To pain - 2",
+				"value": "DC-To Pain-341861"
+			}, {
+				"text": "Eye closed by Edema - C",
+				"value": "DC-Oedema-329498"
+			}],
+			"depends": ""
+		},
+		"DC-Best Mental Response-341903": {
+			"uniqueId": "DC-Best Mental Response-341903",
+			"type": "radio",
+			"name": "DC-Best Mental Response-341903",
+			"label": "Best mental response",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Obeys commands - 6",
+				"value": "DC-Obeys Commands -341908"
+			}, {
+				"text": "Localizes(pair)-5",
+				"value": "DC-Localizes-341970"
+			}, {
+				"text": "Withdrawal(pain)-4",
+				"value": "DC-Withdrawal -341987"
+			}, {
+				"text": "Flexion(pain)-3 ",
+				"value": "DC-Flexion-342004"
+			}, {
+				"text": "Extension(pain)-2 ",
+				"value": "DC-Extension-342012"
+			}, {
+				"text": "None-1",
+				"value": "DC-None-297823"
+			}],
+			"depends": ""
+		},
+		"DC-Best Verbal -342117": {
+			"uniqueId": "DC-Best Verbal -342117",
+			"type": "radio",
+			"name": "DC-Best Verbal -342117",
+			"label": "Best verbal",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "Oriented - 5",
+				"value": "DC-Oriented -342125"
+			}, {
+				"text": "Confused-4",
+				"value": "DC-Confused-295689"
+			}, {
+				"text": "Inappropriate world-3",
+				"value": "DC-Inappropriate world-342202"
+			}, {
+				"text": "Incomplihend sounds -2",
+				"value": "DC-Incomplihend sounds-342211"
+			}, {
+				"text": "None-1",
+				"value": "DC-None-297823"
+			}, {
+				"text": "ET/Trach - T ",
+				"value": "DC-ET/Trach - T -342224"
+			}],
+			"depends": ""
+		},
+		"DC-Glasgow Coma Scale-341804": {
+			"uniqueId": "DC-Glasgow Coma Scale-341804",
+			"type": "number",
+			"name": "DC-Glasgow Coma Scale-341804",
+			"label": "Glasgow Coma Scale",
+			"subLabel": "",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-6 md-layout-item md-size-50",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"hideCondition": "",
+			"mappedField": "",
+			"isReal": false,
+			"decimalPlace": 1
+		},
+		"DC-Descriptive Terms-343207": {
+			"uniqueId": "DC-Descriptive Terms-343207",
+			"type": "radio",
+			"name": "DC-Descriptive Terms-343207",
+			"label": "Descriptive terms",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Seizure ",
+				"value": "DC-Seizure -343209"
+			}, {
+				"text": "Deep breathing pattern",
+				"value": "DC-Deep Breathing Pattern-343257"
+			}, {
+				"text": "Consciousness terms  ",
+				"value": "DC-Consciousness -339006"
+			}],
+			"depends": ""
+		},
+		"DC-Systemic Review Notes-348402": {
+			"uniqueId": "DC-Systemic Review Notes-348402",
+			"type": "htmlText",
+			"name": "DC-Systemic Review Notes-348402",
+			"label": "Notes",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-12 md-layout-item md-size-100",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"depends": ""
+		},
+		"DC-Airway Respiratory Assessment -343305": {
+			"uniqueId": "DC-Airway Respiratory Assessment -343305",
+			"type": "radio",
+			"name": "DC-Airway Respiratory Assessment -343305",
+			"label": "Airway respiratory assessment ",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Patient",
+				"value": "DC-Patient-260680"
+			}, {
+				"text": "Stridor",
+				"value": "DC-Stridor-317565"
+			}, {
+				"text": "Obstructed ",
+				"value": "DC-Obstructed -343350"
+			}],
+			"depends": ""
+		},
+		"DC-Respiration-343405": {
+			"uniqueId": "DC-Respiration-343405",
+			"type": "radio",
+			"name": "DC-Respiration-343405",
+			"label": "Respiration",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Easy",
+				"value": "DC-Easy-343391"
+			}, {
+				"text": "Dyspnea ",
+				"value": "DC-Dyspnea -343409"
+			}, {
+				"text": "Tachypnea",
+				"value": "DC-Tachypnea -343410"
+			}, {
+				"text": "Shallow",
+				"value": "DC-Shallow-343418"
+			}],
+			"depends": ""
+		},
+		"DC-Breathing Sounds-343456": {
+			"uniqueId": "DC-Breathing Sounds-343456",
+			"type": "radio",
+			"name": "DC-Breathing Sounds-343456",
+			"label": "Breath Sounds",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"displayMode": "line",
+			"position": "left",
+			"items": [{
+				"text": "None",
+				"value": "DC-None-297823"
+			}, {
+				"text": "Wheezes",
+				"value": "DC-Wheezing-316747"
+			}, {
+				"text": "Crackle",
+				"value": "DC-Crackle -316743"
+			}, {
+				"text": "Clear",
+				"value": "DC-Clear sound-316351"
+			}, {
+				"text": "Not auscultated",
+				"value": "DC-No-297934"
+			}],
+			"depends": ""
+		},
+		"DC-Oxygen Saturation-295677": {
+			"uniqueId": "DC-Oxygen Saturation-295677",
+			"type": "number",
+			"name": "DC-Oxygen Saturation-295677",
+			"label": "Oxygen Saturation(SAO2)",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"isReal": false,
+			"decimalPlace": 1,
+			"depends": ""
+		},
+		"DC-Oxygen Adminstration-343479": {
+			"uniqueId": "DC-Oxygen Adminstration-343479",
+			"type": "radio",
+			"name": "DC-Oxygen Adminstration-343479",
+			"label": "Oxygen administration ",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"displayMode": "next",
+			"position": "left",
+			"items": [{
+				"text": "Yes",
+				"value": "DC-Yes-297931"
+			}, {
+				"text": "No",
+				"value": "DC-No-297934"
+			}],
+			"depends": ""
+		},
+		"DC-Mode Of Oxygen  Administration -343536": {
+			"uniqueId": "DC-Mode Of Oxygen  Administration -343536",
+			"type": "number",
+			"name": "DC-Mode Of Oxygen  Administration -343536",
+			"label": "Mode of oxygen  administration (L/Min)",
+			"isShowLabel": true,
+			"placeholderText": "",
+			"containerClass": "col-md-4 md-layout-item md-size-33",
+			"additionalContainerClass": "",
+			"additionalFieldClass": "",
+			"additionalLabelClass": "",
+			"defaultValue": "",
+			"validations": [],
+			"isReal": false,
+			"decimalPlace": 1,
+			"depends": ""
+		}
+	}
+}

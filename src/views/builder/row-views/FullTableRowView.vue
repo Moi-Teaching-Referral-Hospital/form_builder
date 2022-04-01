@@ -96,7 +96,7 @@ export default {
       const form_name = this.formName;
       const reference_doctype = this.selectedDoctype;
       const reference_doctype_id = this.selectedDoctypeReference;
-      let doctype = "Mtrh Forms Repository";
+      let doctype = "Form Repository";
       let formData = {
         doctype,
         form_content,

@@ -31,7 +31,7 @@
 <script>
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
 import * as ECT from "@whoicd/icd11ect";
-import "@whoicd/icd11ect/style.css";
+// import "@whoicd/qicd11ect/style.css";
 
 export default {
   name: "Icd11Control",
@@ -48,7 +48,8 @@ export default {
     start() {
       this.modalId = `${this.getRandomInt(1, 100)}`;
       const mySettings = {
-        apiServerUrl: "http://41.89.183.41",
+        apiServerUrl: "https://icd.mtrh.go.ke",
+        apiSecured:true,
         autoBind: false,
         popupMode: true,
         wordsAvailable: false,

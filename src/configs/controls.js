@@ -27,6 +27,7 @@ import DateControl from "@/views/controls/DateControl";
 import NumberControl from "@/views/controls/NumberControl";
 import DropdownControl from "@/views/controls/DropdownControl";
 import LinkControl from "@/views/controls/LinkControl"
+import ImageSelectControl from "@/views/controls/ImageSelectControl"
 import AttachmentControl from "@/views/controls/AttachmentControl"
 import HtmlTextControl from "@/views/controls/HtmlTextControl"
 import TimeControl from "@/views/controls/TimeControl"
@@ -45,6 +46,7 @@ import LinkConfigView from "@/views/control-configs/LinkConfigView";
 import AttachmentConfigView from "@/views/control-configs/AttachmentConfigView";
 import TimeConfigView from "@/views/control-configs/TimeConfigView";
 import HtmlTextConfigView from "@/views/control-configs/HtmlTextConfigView";
+import ImageSelectConfigView from "@/views/control-configs/ImageSelectConfigView";
 
 const CONTROLS = {
   input: {
@@ -75,6 +77,14 @@ const CONTROLS = {
     // component mapping
     fieldComponent: LinkControl,
     configComponent: LinkConfigView,
+  },
+
+  imageSelect: {
+    name: "ImageSelect Field",
+    description: "Select Image",
+    icon: "editPencil", // Follow ICON in `icon-facade.js` to see how it works.
+    fieldComponent: ImageSelectControl,
+    configComponent: ImageSelectConfigView,
   },
 
   attachment:{
@@ -422,21 +432,36 @@ const STATIC_CONTROLS = [
   //   validations: [],
   //   rows: 3,
   // },
-  {
-    uniqueId: "control-a4d0e350-b1cf-42ed-bfc4sdf-957655457b32b",
-    type: "icd11",
-    name: "Icd 11",
-    label: "Female",
-    isShowLabel: true,
-    placeholderText: "",
-    containerClass: "col-md-12 md-layout-item md-size-100",
-    additionalContainerClass: "",
-    additionalFieldClass: "",
-    additionalLabelClass: "",
-    defaultValue: "",
-    validations: [],
-    rows: 3,
-  },
+  // {
+  //   uniqueId: "control-a4d0e350-b1cf-42ed-bfc4sdf-957655457b32b",
+  //   type: "icd11",
+  //   name: "Icd 11",
+  //   label: "Female",
+  //   isShowLabel: true,
+  //   placeholderText: "",
+  //   containerClass: "col-md-12 md-layout-item md-size-100",
+  //   additionalContainerClass: "",
+  //   additionalFieldClass: "",
+  //   additionalLabelClass: "",
+  //   defaultValue: "",
+  //   validations: [],
+  //   rows: 3,
+  // },
+//   {
+//     uniqueId: "control-a4d0e350-b1cf-42ed-bfc4sdf-95765545734839",
+//     type: "imageSelect",
+//     name: "Image Select",
+//     label: "Image Select",
+//     isShowLabel: true,
+//     placeholderText: "",
+//     containerClass: "col-md-12 md-layout-item md-size-100",
+//     additionalContainerClass: "",
+//     additionalFieldClass: "",
+//     additionalLabelClass: "",
+//     defaultValue: "",
+//     validations: [],
+//     rows: 3,
+//   },
 ];
 
 /**

@@ -44,7 +44,7 @@ export default {
   mixins: [SECTION_VIEW_MIXINS, STYLE_INJECTION_MIXIN,RENDERER_SECTION_VIEW_MIXIN],
   methods: {
     getTableData() {
-      const doctype = "Mtrh Forms Repository";
+      const doctype = "Form Repository";
       const parent_repo = this.parent;
       const form_name = this.section.referenceTable;
       let formData = {
