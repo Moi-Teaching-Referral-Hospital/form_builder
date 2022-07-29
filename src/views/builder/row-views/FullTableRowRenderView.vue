@@ -1,5 +1,20 @@
 <template>
   <div>
+
+    <div v-if="section.sectionFormula && section.sectionFormula.length">
+     <b-row  class = "my-2 mx-2" > 
+      <b-col></b-col>
+      <div class="my-1 mx-1" v-for = "formulaData in section.sectionFormula" :key = "formulaData">
+
+      <b-input-group v-if="formulaData.outputField" :prepend="formulaData.outputField" >
+       <b-form-input v-if="formulaData.formula" :value ="getFormulaValue(formulaData.formula)" > </b-form-input>
+     </b-input-group>
+
+      </div>
+     
+     </b-row>
+
+    </div>
     <b-row>
   
       <b-table
@@ -42,19 +57,7 @@
       </b-table>
     </b-row>
 
-    <div v-if="section.sectionFormula && section.sectionFormula.length">
-     <b-row  class = "my-2 mx-2" > 
-      <b-col v-for = "formulaData in section.sectionFormula" :key = "formulaData">
-      <b-input-group v-if="formulaData.outputField" :prepend="formulaData.outputField" >
-       <b-form-input v-if="formulaData.formula" :value ="getFormulaValue(formulaData.formula)" > </b-form-input>
-     </b-input-group>
-      
-
-      </b-col>
-
-     </b-row>
-
-    </div>
+    
     <b-modal :id="tableId" hide-footer size="xl">
       <FormRenderer :form-configuration="formData" v-model="formInputData" />
 
@@ -124,7 +127,13 @@ export default {
     this.calculatedFields = section.calculatedFields.split(",")
   },
   getFormulaValue(formula) {
-    const operands = formula.match(/(?<=\[)[^\][]*(?=])/g)
+   var text = formula
+  var regex = /\[([^\][]*)]/g;
+  var results=[], m;
+  while ( m = regex.exec(text) ) {
+    results.push(m[1]);
+  }
+  const operands = results;
     let resultFormula = formula;
     operands.forEach(operand => {
       const formattedOperand = `[${operand}]`;
