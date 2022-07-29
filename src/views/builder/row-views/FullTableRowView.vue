@@ -1,10 +1,10 @@
 <template>
   <div>
     <div>
-    Referencen{{reference}}
+    Reference{{reference}}
       <b-table
         style="width: 100%"
-        :empty-text="`Items will be show here`"
+        :empty-text="`Items will be show here x`"
         :empty-filtered-text="`No items to show`"
         :show-empty="true"
         :items="items"
@@ -34,14 +34,26 @@
       </b-button>
     </b-modal>
     <div style="width:100%">
-      <b-button
+      <div>
+  <b-button
         variant="primary"
         id="show-btn"
         @click="$bvModal.show('bv-modal-example')"
-        v-if="!readOnly"
+    
         size="sm"
         >Add Row</b-button
       >
+
+        <b-button
+        variant="danger"
+        id="show-btn"
+        @click="$bvModal.show('bv-modal-example')"
+    
+        size="sm"
+        >Clear </b-button
+      >
+      </div>
+    
     </div>
   </div>
 </template>
@@ -55,7 +67,7 @@ export default {
   name: "TableRowView",
   components: { AddControlControl },
   mixins: [TABLE_VIEW_MIXIN],
-
+//    v-if="!readOnly"
   methods: {
     getSave() {
       const data = this.formInputData;
@@ -75,7 +87,10 @@ export default {
 
       this.setValues(val);
     },
-    onRowSelected(val) {},
+    onRowSelected(val) {
+      alert(JSON.stringify(val))
+    },
+   
     getForm(name) {
       getFormConfiguration({ name }).then((config) => {
         const formStringConfig = config.formdata;

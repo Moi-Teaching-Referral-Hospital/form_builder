@@ -18,6 +18,15 @@ const getFormConfiguration = ({ name = "" }) =>
     },
   }).then(({ message }) => message);
 
+const deleteRepo = ({ name = "" }) =>
+
+  fetch({
+    method: "clinical.api.forms.form_builder.delete_repo",
+    args: {
+      name,
+    },
+  }).then(({ message }) => message);
+
 const saveFormData = ({ formData }) =>
   api({
     method: "clinical.api.forms.form_builder.save_form_data",
@@ -49,4 +58,5 @@ export {
   notify,
   getList,
   getDoctypeFields,
+  deleteRepo,
 };

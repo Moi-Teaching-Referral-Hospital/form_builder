@@ -5,7 +5,7 @@
       <img :src="control.imageUrl"  :style="[imageStyle]" />
     </div>
     </b-row>
-    <b-row>
+    <b-row class="mt-3">
   <input
       v-show="true"
       :id="control.uniqueId"

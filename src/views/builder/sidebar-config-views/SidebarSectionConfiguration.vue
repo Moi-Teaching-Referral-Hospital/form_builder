@@ -70,12 +70,13 @@
       <label>Child Table Reference</label>
       <input
         type="text"
-        placeholder="Write your formula here"
+        placeholder="Write child references"
         :class="styles.FORM.FORM_CONTROL"
         v-model="sectionConfiguration.tableReference"
       />
     </div>
-
+    
+    <hr/>
     <div :class="styles.FORM.FORM_GROUP">
       <label>Evaluation visibility</label>
       <textarea
@@ -85,6 +86,50 @@
         rows="6"
         v-model="sectionConfiguration.condition"
       />
+    </div>
+
+    <hr/>
+
+    <div :class="styles.FORM.FORM_GROUP">
+      <label>Calculated Fields</label>
+      <div ref="doctypex" class="ref-field-input"></div>
+      <textarea
+        type="text"
+        placeholder="Calculated Fields"
+        :class="styles.FORM.FORM_CONTROL"
+        rows="6"
+        v-model="sectionConfiguration.calculatedFields"
+      />
+    </div>
+<hr/>
+{{sectionConfiguration.sectionFormula}}
+    <div :class="styles.FORM.FORM_GROUP">
+      <label style="margin-right: 15px">Table Formula</label>
+      <button :class="styles.BUTTON.PRIMARY" @click="addTableFormula()">Add Formula</button>
+    </div>
+
+    <div v-if = "currentFormula.length">
+      <div v-for = "(item, index) in currentFormula " :key="index" :class="styles.FORM.FORM_GROUP">
+       <label>Output Field Name {{index +1}}</label>
+      <input
+        type="text"
+        placeholder="Output Field label"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model = "currentFormula[index].outputField"
+      />
+      <label>Formula {{index +1}}</label>
+       <textarea
+        type="text"
+        placeholder="Write your formula here"
+       rows="6"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model = "currentFormula[index].formula"
+      />
+       <br/>
+       <button class="padding-top: 15px;" :class="styles.BUTTON.PRIMARY" @click="saveFormula(index, currentFormula[index])">Save</button>
+       <hr/>
+    </div>
+
     </div>
 
     <div class="buttons">
@@ -110,6 +155,7 @@ export default {
   data: () => ({
     dataKey: "sectionConfiguration",
     sectionConfiguration: Object.assign({}, SECTION_DEFAULT_DATA),
+    currentFormula : []
   }),
 
   created() {
@@ -119,10 +165,15 @@ export default {
       this.sectionConfiguration,
       this.dataPackage
     );
+    
+    if (this.sectionConfiguration.sectionFormula) {
+      this.currentFormula = this.sectionConfiguration.sectionFormula;
+    }
   },
   mounted() {
-    if (frappe) {
+    if (window.frappe) {
       this.makeSelectDoctypeControl();
+      this.makeSelectDoctypeControl2();
     }
   },
   methods: {
@@ -137,7 +188,7 @@ export default {
           label: __("Reference"),
           fieldtype: "Link",
           fieldname: "reference",
-          options: "Mtrh Forms",
+          options: "Form Design",
           placeholder: "Options",
           onchange: function() {
             if (this.value) {
@@ -154,6 +205,51 @@ export default {
         .find(".input-max-width")
         .removeClass("input-max-width");
     },
+     makeSelectDoctypeControl2() {
+      let me = this;
+      let customer_field = frappe.ui.form.make_control({
+        df: {
+          label: __("Reference"),
+          fieldtype: "Link",
+          fieldname: "reference",
+          options: "Dictionary Concept",
+          placeholder: "Options",
+          onchange: function() {
+            if (this.value) {
+             if(me.sectionConfiguration.calculatedFields ){
+               var result = `${me.sectionConfiguration.calculatedFields},${this.value}`;
+               me.$set(me.sectionConfiguration, "calculatedFields", result);
+               
+             } else {
+              me.$set(me.sectionConfiguration, "calculatedFields", value);
+             }
+              
+            }
+          },
+        },
+        parent: this.$refs["doctypex"],
+        render_input: true,
+      });
+      customer_field.toggle_label(false);
+      // customer_field.$input.val(me.sectionConfiguration.referenceTable);
+      $("#modal-body")
+        .find(".input-max-width")
+        .removeClass("input-max-width");
+    },
+    addTableFormula(){
+       this.currentFormula.push({outputField: "", formula:""})    
+    },
+    saveFormula(index, data) {
+      if(this.sectionConfiguration.sectionFormula) {
+         this.sectionConfiguration.sectionFormula.push({})
+         this.$set(this.sectionConfiguration, "sectionFormula", this.sectionConfiguration.sectionFormula);
+         this.sectionConfiguration.sectionFormula.push({});
+      } else {
+         this.$set(this.sectionConfiguration, "sectionFormula", [{}]);
+      }
+      this.sectionConfiguration.sectionFormula[index] = data;
+      this.$set(this.sectionConfiguration, "sectionFormula", this.sectionConfiguration.sectionFormula);
+    }
   },
 };
 </script>

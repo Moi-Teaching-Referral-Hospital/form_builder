@@ -7,6 +7,13 @@
             </label>
         </div>
 
+         <div :class="styles.FORM.FORM_GROUP">
+            <label>
+                Read Only (Float/Double)
+                <input type="checkbox" v-model="control.isReadOnly">
+            </label>
+        </div>
+
         <div :class="styles.FORM.FORM_GROUP" v-show="control.isReal">
             <label>Decimal Places</label>
             <input type="number"

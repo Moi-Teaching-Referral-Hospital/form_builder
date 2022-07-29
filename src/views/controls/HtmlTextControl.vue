@@ -10,7 +10,7 @@
       :name="control.name || control.uniqueId"  
       :placeholder="control.placeholderText"
       :editor-toolbar="customToolbar"
-      :style="{  'height': (control.height ||200 ) + 'px', 'max-height': ((control.height*3) ||600 ) + 'px'  }"
+      :style="{  'min-height': (control.height ||200 ) + 'px', 'max-height': ((control.height*3) ||600 ) + 'px'  }"
     />
   
   </div>
