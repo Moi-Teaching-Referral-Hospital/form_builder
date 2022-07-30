@@ -45,17 +45,16 @@
          <span v-if="false"> {{data}}</span>
       </template>
     
-      <template #foot()="data">
-        <span v-if="section.calculatedFields">
-        
-          <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
-        </span>
-       
-      </template>
-
-       <template #foot(rowId)="data">
+       <template #foot(rowId)="data" v-if="section.calculatedFields && section.calculatedFields.length">
          <span v-if="false"> {{data}}</span>
           <span > Totals</span>
+      </template>
+
+       <template #foot()="data" v-if="section.calculatedFields && section.calculatedFields.length" >
+
+        <span v-if="section.calculatedFields">
+          <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
+        </span> <span></span> 
       </template>
 
       </b-table>
