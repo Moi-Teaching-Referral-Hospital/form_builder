@@ -47,6 +47,7 @@
     
       <template #foot()="data">
         <span v-if="section.calculatedFields">
+        
           <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
         </span>
        
