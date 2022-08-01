@@ -54,10 +54,14 @@ export default {
         order_by: "creation desc",
         page: 1,
         start: 0,
-        limit: 20,
+        limit: 200,
       };
       getList(formData).then((response) => {
-        this.loaded = response.message.map(item => { return JSON.parse(item.form_content)});
+        this.loaded = response.message.map(item => {
+          let formResponse =  JSON.parse(item.form_content);
+          formResponse.rowId = item.name;
+          return formResponse;
+        });
       });
     },loadItems(val){
        this.section.childTable = val;

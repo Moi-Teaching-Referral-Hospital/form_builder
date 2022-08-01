@@ -151,7 +151,7 @@ export default {
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min;
    },
-  getSave(savedId) {
+   getSave(savedId) {
       const data = this.formInputData;
       const returnedTarget = Object.assign({rowId : savedId}, data);
       returnedTarget.rowId = savedId;
@@ -160,7 +160,6 @@ export default {
       this.$emit("items", { parent: this.parent, items : this.items });
       this.clearData();
     },
-
     setValues(val) {
       this.$set(this, "formInputData", val);
     },
@@ -175,19 +174,19 @@ export default {
     },
     onRowSelected(val) {
       if(val.length < 1){
-        return;
+        return; 
       }
       let size = val.length - 1;
       val = val[size];
-       this.$bvModal.msgBoxConfirm(`Are you sure you want to remove row #${size + 1}?`)
+       this.$bvModal.msgBoxConfirm(`Are you sure you want to remove row ?`)
           .then(value => {
            if(value) {
-           
+          
               this.items = this.items.filter(item => {
-                  item.rowId != val.rowId;
+                  return item.rowId != val.rowId;
              });
           
-          
+        
             deleteRepo({name : val.rowId}).then(reslt => {
                notify("Item removed");
             })
@@ -318,4 +317,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .hide-footer {
+    display : none;
+  }
+
+</style>
