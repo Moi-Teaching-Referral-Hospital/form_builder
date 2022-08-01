@@ -186,7 +186,6 @@ export default {
                   return item.rowId != val.rowId;
              });
           
-        
             deleteRepo({name : val.rowId}).then(reslt => {
                notify("Item removed");
             })
