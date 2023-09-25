@@ -2,85 +2,63 @@
   <div>
 
     <div v-if="section.sectionFormula && section.sectionFormula.length">
-     <b-row  class = "my-2 mx-2" > 
-      <b-col></b-col>
-      <div class="my-1 mx-1" v-for = "formulaData in section.sectionFormula" :key = "formulaData">
+      <b-row class="my-2 mx-2">
+        <b-col></b-col>
+        <div class="my-1 mx-1" v-for="formulaData in section.sectionFormula" :key="formulaData">
 
-      <b-input-group v-if="formulaData.outputField" :prepend="formulaData.outputField" >
-       <b-form-input v-if="formulaData.formula" :value ="getFormulaValue(formulaData.formula)" > </b-form-input>
-     </b-input-group>
+          <b-input-group v-if="formulaData.outputField" :prepend="formulaData.outputField">
+            <b-form-input v-if="formulaData.formula" :value="getFormulaValue(formulaData.formula)"> </b-form-input>
+          </b-input-group>
 
-      </div>
-     
-     </b-row>
+        </div>
+
+      </b-row>
 
     </div>
     <b-row>
-  
-      <b-table
-        style="width: 100%"
-        :empty-text="`Items will be show here`"
-        :empty-filtered-text="`No items to show`"
-        :show-empty="true"
-        :items="items"
-        striped
-        outlined
-        bordered
-        head-row-variant="secondary"
-        :sticky-header="'62vh'"
-        responsive
-        small
-        ref="selectableTable"
-        selectable
-        @row-selected="onRowSelected"
-        select-mode="single"
-        hover
-        foot-clone
-      >
-       <template #head()="data">
-        <span  v-if="data.label">{{ data.label.split('-')[1] }}</span>
-      </template>
 
-       <template #cell(rowId)="data">
-         <span v-if="false"> {{data}}</span>
-      </template>
-    
-       <template #foot(rowId)="data" v-if="section.calculatedFields && section.calculatedFields.length">
-         <span v-if="false"> {{data}}</span>
-          <span > Totals</span>
-      </template>
 
-       <template #foot()="data" v-if="section.calculatedFields && section.calculatedFields.length" >
 
-        <span v-if="section.calculatedFields">
-          <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
-        </span> <span></span> 
-      </template>
+      <b-table style="width: 100%" :empty-text="`Items will be show here`" :empty-filtered-text="`No items to show`"
+        :show-empty="true" :items="items" striped outlined bordered head-row-variant="secondary" :sticky-header="'62vh'"
+        responsive small ref="selectableTable" selectable @row-selected="onRowSelected" select-mode="single" hover
+        foot-clone>
+        <template #head()="data">
+          <span v-if="data.label">{{ data.label.split('-')[1] }}</span>
+        </template>
+
+        <template #cell(rowId)="data">
+          <span v-if="false"> {{ data }}</span>
+        </template>
+
+        <template #foot(rowId)="data" v-if="section.calculatedFields && section.calculatedFields.length">
+          <span v-if="false"> {{ data }}</span>
+          <span> Totals</span>
+        </template>
+
+        <template #foot()="data" v-if="section.calculatedFields && section.calculatedFields.length">
+
+          <span v-if="section.calculatedFields">
+            <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
+          </span> <span></span>
+        </template>
 
       </b-table>
     </b-row>
 
-    
+
     <b-modal :id="tableId" hide-footer size="xl">
       <FormRenderer :form-configuration="formData" v-model="formInputData" />
-
-      <b-button variant="primary" class="mt-3" block @click="save()"
-      size="sm"
-      >
+      <b-button variant="primary" class="mt-3" block @click="save()" size="sm">
         Save
       </b-button>
 
     </b-modal>
 
     <div style="width:100%">
-      <b-button
-        variant="primary"
-        id="show-btn"
-        @click="$bvModal.show(tableId)"
-        v-if="!readOnly && !readonly"
-        >Add Row</b-button
-      >
-    
+      <b-button variant="primary" id="show-btn" @click="$bvModal.show(tableId)" v-if="!readOnly && !readonly">Add
+        Row</b-button>
+
     </div>
   </div>
 </template>
@@ -88,33 +66,39 @@
 <script>
 import { TABLE_VIEW_MIXIN } from "@/mixins/table-view-mixin";
 import { getFormConfiguration, saveFormData, notify, deleteRepo } from "@/services/frappe";
-import  AddControlControl from "@/views/builder/add-controls/AddControlControl";
+import AddControlControl from "@/views/builder/add-controls/AddControlControl";
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
 
 export default {
   name: "FullTableRowRenderView",
   components: { AddControlControl },
   mixins: [TABLE_VIEW_MIXIN, CONTROL_FIELD_EXTEND_MIXIN],
-   data() {
+  data() {
     return {
       items: [],
       formData: {},
       formInputData: {},
       savedItems: [],
       calculatedFields: [],
-      tableFormula : [],
+      tableFormula: [],
     };
   },
   created() {
     if (this.section.referenceTable.length) {
       this.getForm(this.section.referenceTable);
+      if(this.dataInput !=null && this.dataInput[this.section.referenceTable] != null) {
+        this.items =  this.dataInput[this.section.referenceTable];
+      }
     }
+
+   
   },
   props: {
     reference: Object,
     parent: String,
+    dataInput: { type: Object, default: null },
     loaded: { type: Array, default: [] },
-    readonly: {type: Boolean,default:false},
+    readonly: { type: Boolean, default: false },
     valueContainer: { type: Object, required: false },
   },
 
@@ -124,40 +108,74 @@ export default {
         this.items = val;
       }
     },
+    valueContainer(){
+      if(this.valueContainer !=null && this.valueContainer[this.section.referenceTable] != null) {
+        this.items =  this.valueContainer[this.section.referenceTable];
+      }
+    }
   },
   methods: {
-  getCalculatedFields() {
-    this.calculatedFields = section.calculatedFields.split(",")
-  },
-  getFormulaValue(formula) {
-   var text = formula
-  var regex = /\[([^\][]*)]/g;
-  var results=[], m;
-  while ( m = regex.exec(text) ) {
-    results.push(m[1]);
-  }
-  const operands = results;
-    let resultFormula = formula;
-    operands.forEach(operand => {
-      const formattedOperand = `[${operand}]`;
-      const calculatedValue = this.items.map(listItem => listItem[operand]).reduce((partialSum, a) => partialSum + a, 0)
-      resultFormula = resultFormula.replaceAll(formattedOperand, calculatedValue)
-    })
-    return eval(resultFormula)
-    
-  }, 
-  getRandomInt(min, max) {
+    getCalculatedFields() {
+      this.calculatedFields = section.calculatedFields.split(",")
+    },
+    getFormulaValue(formula) {
+      var text = formula
+      var regex = /\[([^\][]*)]/g;
+      var results = [], m;
+      while (m = regex.exec(text)) {
+        results.push(m[1]);
+      }
+      const operands = results;
+      let resultFormula = formula;
+      operands.forEach(operand => {
+        const formattedOperand = `[${operand}]`;
+        const calculatedValue = this.items.map(listItem => listItem[operand]).reduce((partialSum, a) => partialSum + a, 0)
+        resultFormula = resultFormula.replaceAll(formattedOperand, calculatedValue)
+      })
+      return eval(resultFormula)
+
+    },
+    getRandomInt(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min;
-   },
-   getSave(savedId) {
+    },
+    getSave(savedId) {
       const data = this.formInputData;
-      const returnedTarget = Object.assign({rowId : savedId}, data);
+      let isValid = true;
+
+      Object.keys(this.formData.controls).forEach(key => {
+        if (this.formData.controls[key] != null && this.formData.controls[key].validations != null && isValid) {
+          this.formData.controls[key].validations.forEach(validation => {
+
+            if (validation.ruleType == 'required' && this.formInputData[key] == null) {
+              frappe.show_alert(`Field ${this.formData.controls[key].label} is required`)
+              isValid = false
+            }
+
+            if (validation.ruleType == 'min' && `${this.formInputData[key]}`.length < validation.additionalValue) {
+              frappe.show_alert(`Field ${this.formData.controls[key].label} is need at least ${validation.additionalValue} characters`)
+              isValid = false
+            }
+
+            if (validation.ruleType == 'max' && `${this.formInputData[key]}`.length > validation.additionalValue) {
+              frappe.show_alert(`Field ${this.formData.controls[key].label} can only have a max of ${validation.additionalValue} characters`)
+              isValid = false
+            }
+
+          })
+        }
+
+      })
+
+      if (!isValid) {
+        return;
+      }
+      const returnedTarget = Object.assign({ rowId: savedId }, data);
       returnedTarget.rowId = savedId;
       this.items.unshift(returnedTarget);
       this.map();
-      this.$emit("items", { parent: this.parent, items : this.items });
+      this.$emit("items", { parent: this.parent, items: this.items });
       this.clearData();
     },
     setValues(val) {
@@ -173,28 +191,28 @@ export default {
       this.setValues(val);
     },
     onRowSelected(val) {
-      if(val.length < 1){
-        return; 
+      if (val.length < 1) {
+        return;
       }
       let size = val.length - 1;
       val = val[size];
-       this.$bvModal.msgBoxConfirm(`Are you sure you want to remove row ?`)
-          .then(value => {
-           if(value) {
-          
-              this.items = this.items.filter(item => {
-                  return item.rowId != val.rowId;
-             });
-          
-            deleteRepo({name : val.rowId}).then(reslt => {
-               notify("Item removed");
+      this.$bvModal.msgBoxConfirm(`Are you sure you want to remove row ?`)
+        .then(value => {
+          if (value) {
+
+            this.items = this.items.filter(item => {
+              return item.rowId != val.rowId;
+            });
+
+            deleteRepo({ name: val.rowId }).then(reslt => {
+              notify("Item removed");
             })
 
-           }
-          })
-          .catch(err => {
+          }
+        })
+        .catch(err => {
 
-          })
+        })
     },
     getForm(name) {
       getFormConfiguration({ name }).then((config) => {
@@ -278,9 +296,9 @@ export default {
       });
     },
     clearSavedData() {
-        // clearChildTable({parent: this.parent} ).then(result => {
-        //   this.items = [];
-        // })
+      // clearChildTable({parent: this.parent} ).then(result => {
+      //   this.items = [];
+      // })
     },
     save() {
       let form_content = this.formInputData;
@@ -288,19 +306,19 @@ export default {
       const form_name = this.formName;
       let doctype = "Form Repository";
       const parent_repo = this.parent;
-      
+
       let formData = {
         doctype,
         form_content,
         parent_repo,
         form_name,
-         completion_status: "Completed",
-         completed:1,
+        completion_status: "Completed",
+        completed: 1,
       };
 
-      if(this.reference){
-       formData.reference_doctype= this.reference.doctype
-       formData.reference_doctype_id= this.reference.doctype_id 
+      if (this.reference) {
+        formData.reference_doctype = this.reference.doctype
+        formData.reference_doctype_id = this.reference.doctype_id
       }
 
       this.saveForm({ formData });
@@ -312,13 +330,12 @@ export default {
       return id;
     },
   },
- 
+
 };
 </script>
 
 <style scoped>
-  .hide-footer {
-    display : none;
-  }
-
+.hide-footer {
+  display: none;
+}
 </style>

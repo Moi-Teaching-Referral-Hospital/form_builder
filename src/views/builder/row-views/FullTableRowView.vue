@@ -71,6 +71,36 @@ export default {
   methods: {
     getSave() {
       const data = this.formInputData;
+
+       let isValid = true;
+        Object.keys(this.formData.controls).forEach(key => {
+          if (this.formData.controls[key] != null && this.formData.controls[key].validations != null && isValid) {
+            this.formData.controls[key].validations.forEach(validation => {
+
+              if (validation.ruleType == 'required' && this.formInputData[key] == null) {
+                frappe.show_alert(`Field ${this.formData.controls[key].label} is required`)
+                isValid = false
+              }
+
+              if (validation.ruleType == 'min' && `${this.formInputData[key]}`.length < validation.additionalValue) {
+                frappe.show_alert(`Field ${this.formData.controls[key].label} is need at least ${validation.additionalValue} characters`)
+                isValid = false
+              }
+
+              if (validation.ruleType == 'max' && `${this.formInputData[key]}`.length > validation.additionalValue) {
+                frappe.show_alert(`Field ${this.formData.controls[key].label} can only have a max of ${validation.additionalValue} characters`)
+                isValid = false
+              }
+
+            })
+          } 
+
+        })
+        
+         if (!isValid) {
+          return;
+        }
+
       const returnedTarget = Object.assign({}, data);
       this.items.unshift(returnedTarget);
       this.clearData();

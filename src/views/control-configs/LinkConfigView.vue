@@ -15,10 +15,25 @@
         </div>
 
         <div :class="styles.FORM.FORM_GROUP" >
-            <label>Search Filters</label>
-            <input type="text"
+            <label>Parent</label>
+            <input type="text" 
                    :class="styles.FORM.FORM_CONTROL"
-                   v-model="control.searchFilters">
+                   v-model="control.parentData">
+        </div>
+
+        <div :class="styles.FORM.FORM_GROUP" >
+            <label>Static parent (If tree)</label>
+            <input type="text" 
+                   :class="styles.FORM.FORM_CONTROL"
+                   v-model="control.parentConcept">
+        </div>
+
+        <div :class="styles.FORM.FORM_GROUP" >
+            <label>Search Filters</label>
+            <textarea type="text"
+            rows="6"
+                   :class="styles.FORM.FORM_CONTROL"
+                   v-model="control.searchFilters"></textarea>
         </div>
     </div>
 </template>

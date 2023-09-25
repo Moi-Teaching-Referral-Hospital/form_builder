@@ -13,6 +13,7 @@
     </div>
 
     <!-- sections of the form -->
+
     <SectionContainer
       v-for="sectionData in sortedSections"
       :section="sectionData"

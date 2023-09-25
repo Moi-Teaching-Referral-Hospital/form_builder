@@ -11,9 +11,9 @@
   "license": "MIT",
   "main": "./dist/v-form-builder.umd.min.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development vue-cli-service serve --port 9999",
-    "build": "vue-cli-service build --skip-plugins @vue/cli-plugin-eslint",
-    "build-lib": "cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint && cp ./dist/v-form-builder.umd.min.js   ./../../apps/frontend/frontend/public/js/forms/lib/fb.bundle.js ",
+    "serve": " export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=development vue-cli-service serve --port 9999",
+    "build": " export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --skip-plugins @vue/cli-plugin-eslint",
+    "build-lib": "export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint && cp ./dist/v-form-builder.umd.min.js   ./../../apps/frontend/frontend/public/js/forms/lib/fb.bundle.js ",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "dayjs": "^1.8.28",
     "deep-equal": "^2.0.3",
     "litepicker": "^1.4.6",
+    "vue-select": "^3.2.0",
     "vue": "^2.6.12",
     "vue2-editor": "^2.10.2",
     "vuedraggable": "^2.23.2"

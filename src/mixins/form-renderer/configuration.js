@@ -13,6 +13,7 @@ const CONFIGURATION = {
     },
     parent: { type: String, default: "Parent" },
     reference: {type:Object,default:null},
+    dataInput: {type:Array,default:null},
     readonly: {
       type: Boolean,
       required: false,

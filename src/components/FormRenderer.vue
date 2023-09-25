@@ -1,7 +1,10 @@
 <template>
+
   <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-renderer']">
     
+    
     <!-- Render Form Tag Or Not -->
+
 
     <form
       v-if="formData.formConfig.renderFormTag"
@@ -30,6 +33,7 @@
         :controls="formData.controls"
         :key="sectionData.uniqueId"
         :value-container="valueContainer"
+        :dataInput ="dataInput"
         :validation-errors="validationErrors"
       />
     </form>
@@ -55,6 +59,7 @@
         :key="sectionData.uniqueId"
         :value-container="valueContainer"
         :validation-errors="validationErrors"
+        :dataInput ="dataInput"
       />
 
     </template>
