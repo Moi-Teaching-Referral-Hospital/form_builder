@@ -10,6 +10,7 @@
   >
     <div class="control-view">
       <!-- render the label -->
+    
       <ControlLabel v-show="control.isShowLabel" :control="control" />
 
       <!-- render the exact field -->

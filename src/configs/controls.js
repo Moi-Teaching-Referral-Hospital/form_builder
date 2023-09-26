@@ -32,6 +32,7 @@ import AttachmentControl from "@/views/controls/AttachmentControl"
 import HtmlTextControl from "@/views/controls/HtmlTextControl"
 import TimeControl from "@/views/controls/TimeControl"
 import Icd11Control from "@/views/controls/Icd11Control"
+import NhddControl from "@/views/controls/NhddControl"
 
 // Control-Config-Component
 import TextBlockConfigView from "@/views/control-configs/TextBlockConfigView";
@@ -62,13 +63,15 @@ const CONTROLS = {
     name: "Icd11",
     description: "Icd 11 tool",
     icon: "editPencil", // Follow ICON in `icon-facade.js` to see how it works.
-
     // component mapping
     fieldComponent: Icd11Control,
-    
-
   },
-
+  nhdd: {
+    name: "nhdd",
+    description: "nhdd",
+    icon: "editPencil", 
+    fieldComponent: NhddControl,
+  },
   link: {
     name: "Link Field",
     description: "Add searchable items",
