@@ -1,7 +1,5 @@
 <template>
   <div :id="`parent-${control.uniqueId}`">
-
-
     <div>
       <v-select v-model="searchValue" :options="searchResults" label="name" :filterable="false" @search="onSearch"
         placeholder="Search">
@@ -22,11 +20,8 @@
           <div class="d-center">
             {{ option.id }} - {{ option.display_name }}
           </div>
-        </template>
-        
+        </template>   
       </v-select>
-
-
     </div>
   </div>
 </template>
@@ -50,25 +45,21 @@ export default {
       parentData: "",
     };
   },
-  mounted() {
-    this.preload()
-  },
+  
   watch: {
-    searchValue(o, n) {
-      if(o != null && o.length >0 ){
-        this.updateValue(`${ o.id} - ${o.display_name}` )
+    searchValue(o, n) {    
+      if(o != null ){
+        const result = `${ o.id} - ${o.display_name}`;
+        this.updateValue(result)
       }
     },
     valueContainer: {
       handler(newData, oldData) {
-        if (this.control.parentData != null && newData[this.control.parentData] != null
-
-        ) {
+        if (this.control.parentData != null && newData[this.control.parentData] != null) {
           this.parentData = newData[this.control.parentData]
         }
       },
       deep: true,
-
     },
     value(val) {
       if (!val || !val.length) {
@@ -78,7 +69,7 @@ export default {
           const tiltes = val.split("-")
           this.searchValue = {
             id: tiltes[0],
-            display_name: [1]
+            display_name: titles[1]
           }
         }
 

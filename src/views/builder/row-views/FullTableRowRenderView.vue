@@ -15,8 +15,18 @@
       </b-row>
 
     </div>
-    <b-row>
 
+
+    <b-row v-if="formData">
+    
+    </b-row>
+   parent : {{ parent }}
+   parent : {{reference }}
+    <b-row v-if="showGraph && chartDataSet.length > 0 &&  chartDataSet[0].labels != null "  >
+      {{ chartDataSet }}
+      <Chart :dataset="chartDataSet" :labels="chartLabels"></Chart>
+    </b-row>
+    <b-row v-else>
 
 
       <b-table style="width: 100%" :empty-text="`Items will be show here`" :empty-filtered-text="`No items to show`"
@@ -39,7 +49,7 @@
         <template #foot()="data" v-if="section.calculatedFields && section.calculatedFields.length">
 
           <span v-if="section.calculatedFields">
-            <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item => item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
+            <span class="text-danger" v-if="section.calculatedFields.split(',').includes(data.column)">{{ items.map(item=> item[data.column]).reduce((partialSum, a) => partialSum + a, 0) }}</span>
           </span> <span></span>
         </template>
 
@@ -55,7 +65,7 @@
 
     </b-modal>
 
-    <div style="width:100%">
+    <div style="width:100%"    >
       <b-button variant="primary" id="show-btn" @click="$bvModal.show(tableId)" v-if="!readOnly && !readonly">Add
         Row</b-button>
 
@@ -67,11 +77,12 @@
 import { TABLE_VIEW_MIXIN } from "@/mixins/table-view-mixin";
 import { getFormConfiguration, saveFormData, notify, deleteRepo } from "@/services/frappe";
 import AddControlControl from "@/views/builder/add-controls/AddControlControl";
+import Chart from "@/views/builder/row-views/Chart";
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
 
 export default {
   name: "FullTableRowRenderView",
-  components: { AddControlControl },
+  components: { AddControlControl, Chart },
   mixins: [TABLE_VIEW_MIXIN, CONTROL_FIELD_EXTEND_MIXIN],
   data() {
     return {
@@ -81,17 +92,20 @@ export default {
       savedItems: [],
       calculatedFields: [],
       tableFormula: [],
+      chartDataSet: [],
+      chartLabels: [],
+      showGraph: false,
     };
   },
   created() {
+    this.showGraph = this.section.showGraph;
     if (this.section.referenceTable.length) {
       this.getForm(this.section.referenceTable);
-      if(this.dataInput !=null && this.dataInput[this.section.referenceTable] != null) {
-        this.items =  this.dataInput[this.section.referenceTable];
+      if (this.dataInput != null && this.dataInput[this.section.referenceTable] != null) {
+        this.items = this.dataInput[this.section.referenceTable];
+
       }
     }
-
-   
   },
   props: {
     reference: Object,
@@ -106,11 +120,12 @@ export default {
     loaded(val) {
       if (val.length) {
         this.items = val;
+       this.populateGraph();
       }
     },
-    valueContainer(){
-      if(this.valueContainer !=null && this.valueContainer[this.section.referenceTable] != null) {
-        this.items =  this.valueContainer[this.section.referenceTable];
+    valueContainer() {
+      if (this.valueContainer != null && this.valueContainer[this.section.referenceTable] != null) {
+        this.items = this.valueContainer[this.section.referenceTable];
       }
     }
   },
@@ -142,6 +157,8 @@ export default {
     },
     getSave(savedId) {
       const data = this.formInputData;
+      console.log("DATA FROM FORM")
+      console.log(data)
       let isValid = true;
 
       Object.keys(this.formData.controls).forEach(key => {
@@ -175,6 +192,7 @@ export default {
       returnedTarget.rowId = savedId;
       this.items.unshift(returnedTarget);
       this.map();
+      console.log({ parent: this.parent, items: this.items })
       this.$emit("items", { parent: this.parent, items: this.items });
       this.clearData();
     },
@@ -214,6 +232,26 @@ export default {
 
         })
     },
+    populateGraph(){
+      if (this.showGraph) {
+          this.chartLabels = this.items.map(item => item[`${this.formData.xAxisField}`])
+          const yAxisFields = this.formData.graphFields.split(",");
+          const tempSet = [];
+          yAxisFields.forEach(item => {
+            let currentSet = {};
+            currentSet.name = item.split("-")[1]
+            currentSet.type = "line"
+            currentSet.values = this.items.map(x => x[`${item}`])
+            const preset = tempSet.find(j => j.name == currentSet.name);
+            if(preset == null){
+                tempSet.push(currentSet)
+            }
+          
+          })
+          this.chartDataSet = tempSet;
+
+        }
+    },
     getForm(name) {
       getFormConfiguration({ name }).then((config) => {
         const formStringConfig = config.formdata;
@@ -222,6 +260,9 @@ export default {
         this.formName = config.name;
         this.formData = configObject;
         this.originalConfig = configObject;
+        this.populateGraph()
+    
+
       });
     },
     list(key, formData) {

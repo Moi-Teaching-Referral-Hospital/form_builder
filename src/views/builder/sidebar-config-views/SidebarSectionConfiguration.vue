@@ -4,38 +4,22 @@
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Headline</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="sectionConfiguration.headline"
-      />
+      <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="sectionConfiguration.headline" />
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Headline Additional Class (CSS)</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="sectionConfiguration.headlineAdditionalClass"
-      />
+      <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="sectionConfiguration.headlineAdditionalClass" />
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Sub-Headline</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="sectionConfiguration.subHeadline"
-      />
+      <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="sectionConfiguration.subHeadline" />
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Sub-Headline Additional Class (CSS)</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="sectionConfiguration.subHeadlineAdditionalClass"
-      />
+      <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="sectionConfiguration.subHeadlineAdditionalClass" />
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
@@ -44,6 +28,37 @@
         <input type="checkbox" v-model="sectionConfiguration.isShowHeadline" />
       </label>
     </div>
+    <hr />
+
+    <div :class="styles.FORM.FORM_GROUP">
+      <label>
+        Show Graph
+        <input type="checkbox" v-model="sectionConfiguration.showGraph" />
+      </label>
+    </div>
+    <div :class="styles.FORM.FORM_GROUP" v-if="sectionConfiguration.showGraph">
+      <label> X - Axis</label>
+      <b-form-select :class="controlFieldClass" v-model="formData.xAxisField">
+        <b-form-select-option v-for="optionObj in sectionConfiguration.controls" :key="optionObj" :value="optionObj" v-text="optionObj"
+          :selected="value === optionObj"></b-form-select-option>
+      </b-form-select>
+    </div>
+
+    <div :class="styles.FORM.FORM_GROUP" v-if="sectionConfiguration.showGraph">
+      <label> Select y axis  Fields For Graph </label>
+      <select :class="controlFieldClass" @input="updateValue2($event.target.value)">
+        <option v-for="optionObj in sectionConfiguration.controls" :key="optionObj" :value="optionObj" v-text="optionObj"
+          :selected="value === optionObj"></option>
+      </select>
+    </div>
+
+    <div :class="styles.FORM.FORM_GROUP" v-if="sectionConfiguration.showGraph">
+      <label>Field To plotted on Graph</label>
+      <textarea placeholder="Add you Graph Fields" :class="styles.FORM.FORM_CONTROL" rows="6"
+        :value="sectionConfiguration.graphFields" />
+    </div>
+    <hr />
+
 
     <div :class="styles.FORM.FORM_GROUP">
       <label> Reference Table</label>
@@ -52,83 +67,53 @@
 
     <div :class="styles.FORM.FORM_GROUP">
       <label> Select Formula Controls </label>
-      <select
-        :class="controlFieldClass"
-        @input="updateValue($event.target.value)"
-      >
-        <option
-          v-for="optionObj in sectionConfiguration.controls"
-          :key="optionObj"
-          :value="optionObj"
-          v-text="optionObj"
-          :selected="value === optionObj"
-        ></option>
+      <select :class="controlFieldClass" @input="updateValue($event.target.value)">
+        <option v-for="optionObj in sectionConfiguration.controls" :key="optionObj" :value="optionObj" v-text="optionObj"
+          :selected="value === optionObj"></option>
       </select>
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Child Table Reference</label>
-      <input
-        type="text"
-        placeholder="Write child references"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="sectionConfiguration.tableReference"
-      />
-    </div>
-    
-    <hr/>
-    <div :class="styles.FORM.FORM_GROUP">
-      <label>Evaluation visibility</label>
-      <textarea
-        type="text"
-        placeholder="Write your formula here"
-        :class="styles.FORM.FORM_CONTROL"
-        rows="6"
-        v-model="sectionConfiguration.condition"
-      />
+      <input type="text" placeholder="Write child references" :class="styles.FORM.FORM_CONTROL"
+        v-model="sectionConfiguration.tableReference" />
     </div>
 
-    <hr/>
+    <hr />
+    <div :class="styles.FORM.FORM_GROUP">
+      <label>Evaluation visibility</label>
+      <textarea type="text" placeholder="Write your formula here" :class="styles.FORM.FORM_CONTROL" rows="6"
+        v-model="sectionConfiguration.condition" />
+    </div>
+
+    <hr />
 
     <div :class="styles.FORM.FORM_GROUP">
       <label>Calculated Fields</label>
       <div ref="doctypex" class="ref-field-input"></div>
-      <textarea
-        type="text"
-        placeholder="Calculated Fields"
-        :class="styles.FORM.FORM_CONTROL"
-        rows="6"
-        v-model="sectionConfiguration.calculatedFields"
-      />
+      <textarea type="text" placeholder="Calculated Fields" :class="styles.FORM.FORM_CONTROL" rows="6"
+        v-model="sectionConfiguration.calculatedFields" />
     </div>
-<hr/>
-{{sectionConfiguration.sectionFormula}}
+    <hr />
+    {{ sectionConfiguration.sectionFormula }}
     <div :class="styles.FORM.FORM_GROUP">
       <label style="margin-right: 15px">Table Formula</label>
       <button :class="styles.BUTTON.PRIMARY" @click="addTableFormula()">Add Formula</button>
     </div>
 
-    <div v-if = "currentFormula.length">
-      <div v-for = "(item, index) in currentFormula " :key="index" :class="styles.FORM.FORM_GROUP">
-       <label>Output Field Name {{index +1}}</label>
-      <input
-        type="text"
-        placeholder="Output Field label"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model = "currentFormula[index].outputField"
-      />
-      <label>Formula {{index +1}}</label>
-       <textarea
-        type="text"
-        placeholder="Write your formula here"
-       rows="6"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model = "currentFormula[index].formula"
-      />
-       <br/>
-       <button class="padding-top: 15px;" :class="styles.BUTTON.PRIMARY" @click="saveFormula(index, currentFormula[index])">Save</button>
-       <hr/>
-    </div>
+    <div v-if="currentFormula.length">
+      <div v-for="(item, index) in currentFormula " :key="index" :class="styles.FORM.FORM_GROUP">
+        <label>Output Field Name {{ index + 1 }}</label>
+        <input type="text" placeholder="Output Field label" :class="styles.FORM.FORM_CONTROL"
+          v-model="currentFormula[index].outputField" />
+        <label>Formula {{ index + 1 }}</label>
+        <textarea type="text" placeholder="Write your formula here" rows="6" :class="styles.FORM.FORM_CONTROL"
+          v-model="currentFormula[index].formula" />
+        <br />
+        <button class="padding-top: 15px;" :class="styles.BUTTON.PRIMARY"
+          @click="saveFormula(index, currentFormula[index])">Save</button>
+        <hr />
+      </div>
 
     </div>
 
@@ -155,7 +140,7 @@ export default {
   data: () => ({
     dataKey: "sectionConfiguration",
     sectionConfiguration: Object.assign({}, SECTION_DEFAULT_DATA),
-    currentFormula : []
+    currentFormula: []
   }),
 
   created() {
@@ -165,7 +150,7 @@ export default {
       this.sectionConfiguration,
       this.dataPackage
     );
-    
+
     if (this.sectionConfiguration.sectionFormula) {
       this.currentFormula = this.sectionConfiguration.sectionFormula;
     }
@@ -177,6 +162,16 @@ export default {
     }
   },
   methods: {
+    updateValue2(val) {
+
+      let value = this.sectionConfiguration.graphFields || "";
+      value +=  value.length? `,${val}`: `${val}`
+      this.$set(this.sectionConfiguration, "graphFields", value);
+      this.$set(this.formData, "graphFields", value);
+      
+     
+     
+    },
     updateValue(val) {
       const value = this.sectionConfiguration.condition + "  " + `[${val}] `;
       this.$set(this.sectionConfiguration, "condition", value);
@@ -190,7 +185,7 @@ export default {
           fieldname: "reference",
           options: "Form Design",
           placeholder: "Options",
-          onchange: function() {
+          onchange: function () {
             if (this.value) {
               me.sectionConfiguration.referenceTable = this.value;
             }
@@ -205,7 +200,7 @@ export default {
         .find(".input-max-width")
         .removeClass("input-max-width");
     },
-     makeSelectDoctypeControl2() {
+    makeSelectDoctypeControl2() {
       let me = this;
       let customer_field = frappe.ui.form.make_control({
         df: {
@@ -214,16 +209,16 @@ export default {
           fieldname: "reference",
           options: "Dictionary Concept",
           placeholder: "Options",
-          onchange: function() {
+          onchange: function () {
             if (this.value) {
-             if(me.sectionConfiguration.calculatedFields ){
-               var result = `${me.sectionConfiguration.calculatedFields},${this.value}`;
-               me.$set(me.sectionConfiguration, "calculatedFields", result);
-               
-             } else {
-              me.$set(me.sectionConfiguration, "calculatedFields", value);
-             }
-              
+              if (me.sectionConfiguration.calculatedFields) {
+                var result = `${me.sectionConfiguration.calculatedFields},${this.value}`;
+                me.$set(me.sectionConfiguration, "calculatedFields", result);
+
+              } else {
+                me.$set(me.sectionConfiguration, "calculatedFields", value);
+              }
+
             }
           },
         },
@@ -236,16 +231,16 @@ export default {
         .find(".input-max-width")
         .removeClass("input-max-width");
     },
-    addTableFormula(){
-       this.currentFormula.push({outputField: "", formula:""})    
+    addTableFormula() {
+      this.currentFormula.push({ outputField: "", formula: "" })
     },
     saveFormula(index, data) {
-      if(this.sectionConfiguration.sectionFormula) {
-         this.sectionConfiguration.sectionFormula.push({})
-         this.$set(this.sectionConfiguration, "sectionFormula", this.sectionConfiguration.sectionFormula);
-         this.sectionConfiguration.sectionFormula.push({});
+      if (this.sectionConfiguration.sectionFormula) {
+        this.sectionConfiguration.sectionFormula.push({})
+        this.$set(this.sectionConfiguration, "sectionFormula", this.sectionConfiguration.sectionFormula);
+        this.sectionConfiguration.sectionFormula.push({});
       } else {
-         this.$set(this.sectionConfiguration, "sectionFormula", [{}]);
+        this.$set(this.sectionConfiguration, "sectionFormula", [{}]);
       }
       this.sectionConfiguration.sectionFormula[index] = data;
       this.$set(this.sectionConfiguration, "sectionFormula", this.sectionConfiguration.sectionFormula);

@@ -33,6 +33,7 @@ import HtmlTextControl from "@/views/controls/HtmlTextControl"
 import TimeControl from "@/views/controls/TimeControl"
 import Icd11Control from "@/views/controls/Icd11Control"
 import NhddControl from "@/views/controls/NhddControl"
+import DateTimeControl from "@/views/controls/DateTimeControl"
 
 // Control-Config-Component
 import TextBlockConfigView from "@/views/control-configs/TextBlockConfigView";
@@ -106,6 +107,15 @@ const CONTROLS = {
 
     // component mapping
     fieldComponent: TimeControl,
+    configComponent: TimeConfigView,
+  },
+
+  datetime: {
+    name: "Date Time Field",
+    description: "Date Time",
+    icon: "editPencil", 
+
+    fieldComponent: DateTimeControl,
     configComponent: TimeConfigView,
   },
   htmlText: {
