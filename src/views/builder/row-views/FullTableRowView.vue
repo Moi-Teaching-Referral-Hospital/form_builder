@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-    Reference{{reference}}
+
       <b-table
         style="width: 100%"
         :empty-text="`Items will be show here x`"

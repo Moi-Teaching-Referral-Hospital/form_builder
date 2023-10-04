@@ -20,10 +20,8 @@
     <b-row v-if="formData">
     
     </b-row>
-   parent : {{ parent }}
-   parent : {{reference }}
+
     <b-row v-if="showGraph && chartDataSet.length > 0 &&  chartDataSet[0].labels != null "  >
-      {{ chartDataSet }}
       <Chart :dataset="chartDataSet" :labels="chartLabels"></Chart>
     </b-row>
     <b-row v-else>

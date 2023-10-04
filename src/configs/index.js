@@ -1,5 +1,5 @@
 const MAIN_CONSTANTS = {
-    COPYRIGHT: "MTRH FORMS V1.0.0",
+    COPYRIGHT: "FORMS V2.0.0",
 }
 
 export {
