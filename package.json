@@ -1,11 +1,11 @@
 {
-  "name": "v-form-builder",
+  "name": "vue-frappe-formbuilder-health",
   "version": "2.0.1",
   "description": "Vue Form Builder PRO MAX built from top of Vue. Super dynamic and flexible including Drag and Drop feature.",
   "author": {
-    "email": "phattranminh@gmail.com",
-    "name": "Phat Tran",
-    "url": "https://sethphat.com"
+    "email": "philmaxsnr@gmail.com",
+    "name": "Philip Ademba",
+    "url": "https://philipademba.com"
   },
   "private": false,
   "license": "MIT",
@@ -13,7 +13,8 @@
   "scripts": {
     "serve": " export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=development vue-cli-service serve --port 9999",
     "build": " export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --skip-plugins @vue/cli-plugin-eslint",
-    "build-lib": "export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint && cp ./dist/v-form-builder.umd.min.js   ./../../apps/frontend/frontend/public/js/forms/lib/fb.bundle.js ",
+    "build-lib": "export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint",
+    "build-lib-x": "export NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint && cp ./dist/v-form-builder.umd.min.js   ./../../apps/frontend/frontend/public/js/forms/lib/fb.bundle.js ",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,8 +25,9 @@
     "dayjs": "^1.8.28",
     "deep-equal": "^2.0.3",
     "litepicker": "^1.4.6",
-    "vue-select": "^3.2.0",
+    "user": "^0.0.0",
     "vue": "^2.6.12",
+    "vue-select": "^3.2.0",
     "vue2-editor": "^2.10.2",
     "vuedraggable": "^2.23.2"
   },
@@ -50,7 +52,7 @@
     "last 2 versions"
   ],
   "repository": {
-    "url": "https://github.com/sethsandaru/vue-form-builder.git"
+    "url": "https://github.com/Moi-Teaching-Referral-Hospital/form_builder.git"
   },
   "keywords": [
     "vue-form-builder",
