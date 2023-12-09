@@ -75,7 +75,7 @@ const saveFormData = ({ formData }) =>
   }).then(({ message }) => message);
 
 const notify = (message) => {
-  alert(message)
+  // 
 };
 
 const getList = (payload) =>

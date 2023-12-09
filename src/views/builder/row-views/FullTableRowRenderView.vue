@@ -221,7 +221,7 @@ export default {
             });
 
             deleteRepo({ name: val.rowId }).then(reslt => {
-              notify("Item removed");
+              this.show_alert("Item removed");
             })
 
           }
@@ -330,7 +330,7 @@ export default {
     saveForm(formData) {
       saveFormData(formData).then((saved) => {
         this.getSave(saved.name);
-        notify("Item saved " + saved.name);
+        this.show_alert("Item saved " + saved.name);
         this.savedItems.push(saved.name)
       });
     },
