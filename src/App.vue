@@ -53,7 +53,7 @@
       />
     </div>
 
-    <FormBuilder v-show="!isRenderer" v-model="formData" ></FormBuilder>
+    <FormBuilder v-show="!isRenderer || true" v-model="formData" ></FormBuilder>
 
     
     <div class="p-0" >
