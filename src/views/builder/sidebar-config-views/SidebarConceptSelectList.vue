@@ -34,7 +34,7 @@ import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 import { CONTROLS, STATIC_CONTROLS } from "@/configs/controls";
 import { SIDEBAR_BODY_MIXIN } from "@/mixins/sidebar-body-mixin";
 import { HELPER } from "@/libraries/helper";
-import { api } from "../../../services/frappe";
+import { api,f } from "../../../services/frappe";
 
 export default {
   name: "SidebarControlSelectList",
