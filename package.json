@@ -18,14 +18,15 @@
   },
   "dependencies": {
     "@whoicd/icd11ect": "^1.4.1",
+    "axios": "^1.6.2",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^2.6.5",
     "dayjs": "^1.8.28",
     "deep-equal": "^2.0.3",
     "litepicker": "^1.4.6",
-    "vue-select": "^3.2.0",
     "vue": "^2.6.12",
+    "vue-select": "^3.2.0",
     "vue2-editor": "^2.10.2",
     "vuedraggable": "^2.23.2"
   },
