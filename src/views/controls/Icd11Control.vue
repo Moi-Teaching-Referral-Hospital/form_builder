@@ -31,6 +31,7 @@
 
 <script>
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
+import { api } from "../../services/frappe";
 
 
 export default {
@@ -84,7 +85,7 @@ export default {
    
     fetchData(loading, search, context) {
 
-      frappe.call({
+      api({
         method: "clinical.api.icd.auth.access_icd",
         args: {
           q: search,

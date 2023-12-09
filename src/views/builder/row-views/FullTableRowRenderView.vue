@@ -164,17 +164,17 @@ export default {
           this.formData.controls[key].validations.forEach(validation => {
 
             if (validation.ruleType == 'required' && this.formInputData[key] == null) {
-              frappe.show_alert(`Field ${this.formData.controls[key].label} is required`)
+              this.show_alert(`Field ${this.formData.controls[key].label} is required`)
               isValid = false
             }
 
             if (validation.ruleType == 'min' && `${this.formInputData[key]}`.length < validation.additionalValue) {
-              frappe.show_alert(`Field ${this.formData.controls[key].label} is need at least ${validation.additionalValue} characters`)
+              this.show_alert(`Field ${this.formData.controls[key].label} is need at least ${validation.additionalValue} characters`)
               isValid = false
             }
 
             if (validation.ruleType == 'max' && `${this.formInputData[key]}`.length > validation.additionalValue) {
-              frappe.show_alert(`Field ${this.formData.controls[key].label} can only have a max of ${validation.additionalValue} characters`)
+              this.show_alert(`Field ${this.formData.controls[key].label} can only have a max of ${validation.additionalValue} characters`)
               isValid = false
             }
 

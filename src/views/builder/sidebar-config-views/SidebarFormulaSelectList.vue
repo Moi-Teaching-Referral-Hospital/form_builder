@@ -79,7 +79,7 @@ export default {
     },
     fetchConcepts: function(t) {
       var e = this;
-      frappe.call({
+      this.api({
         method: "clinical.api.forms.form_builder.concept_formula_query",
         args: { txt: t },
         callback: function(t) {
