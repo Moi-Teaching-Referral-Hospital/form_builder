@@ -44418,9 +44418,7 @@ var frappe_api = function api(_ref) {
       'Content-Type': 'application/json'
     };
     var stringifiedArgs = frappe_stringifyNestedObjects(args);
-    lib_axios.post(getUrl(method), {
-      args: stringifiedArgs
-    }, {
+    lib_axios.post(getUrl(method), stringifiedArgs, {
       headers: headers,
       withCredentials: true
     }).then(function (response) {
