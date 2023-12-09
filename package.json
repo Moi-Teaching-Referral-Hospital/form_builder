@@ -1,10 +1,10 @@
 {
   "name": "v-form-builder",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Vue Form Builder PRO MAX built from top of Vue. Super dynamic and flexible including Drag and Drop feature.",
   "author": {
-    "email": "phattranminh@gmail.com",
-    "name": "Phat Tran",
+    "email": "philmaxsnr@gmail.com",
+    "name": "Philip Ademba",
     "url": "https://sethphat.com"
   },
   "private": false,
