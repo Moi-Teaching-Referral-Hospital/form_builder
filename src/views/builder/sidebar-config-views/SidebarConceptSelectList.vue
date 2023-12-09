@@ -107,10 +107,10 @@ export default {
       api({
         method: "clinical.api.forms.form_builder.concept_query",
         args: { txt: t },
-        callback: function(t) {
-          var n = t.message;
-          e.apiList = n;
-        },
+        
+      }).then(t=> {
+        var n = t.message;
+          this.apiList = n;
       });
     },
   },

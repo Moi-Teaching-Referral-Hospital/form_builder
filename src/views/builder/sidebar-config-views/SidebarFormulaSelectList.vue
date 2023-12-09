@@ -86,6 +86,9 @@ export default {
           var n = t.message;
           e.apiList = n;
         },
+      }).then(t => {
+        var n = t.message;
+          this.apiList = n;
       });
     },
   },
