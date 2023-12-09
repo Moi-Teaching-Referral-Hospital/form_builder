@@ -1,5 +1,9 @@
 import axios from "axios";
 
+const getUrl =(method) =>{
+  return  `${localStorage.getItem('appBaseUrl')}/api/method/${method}`
+}
+
 const stringifyNestedObjects = (input) => {
   if (typeof input === 'object' && input !== null) {
     for (let key in input) {
@@ -13,7 +17,7 @@ const stringifyNestedObjects = (input) => {
 
 const api = ({ method, args = {} }) =>
   new Promise((resolve, reject) => {
-    const apiUrl = method;
+   
     const headers = {
       'Content-Type': 'application/json',
     };
@@ -21,20 +25,19 @@ const api = ({ method, args = {} }) =>
     const stringifiedArgs = stringifyNestedObjects(args);
 
     axios
-      .post(apiUrl, { args: stringifiedArgs }, { headers, withCredentials: true })
+      .post(getUrl(method), { args: stringifiedArgs }, { headers, withCredentials: true })
       .then((response) => resolve(response.data))
       .catch((error) => reject(error));
   });
 
 const fetch = ({ method, args = {} }) =>
   new Promise((resolve, reject) => {
-    const apiUrl = method; // Assuming method is the URL
     const headers = {
       "Content-Type": "application/json",
     };
 
     axios
-      .get(apiUrl, { headers, withCredentials: true, params: args })
+      .get(getUrl(method), { headers, withCredentials: true, params: args })
       .then((response) => resolve(response.data))
       .catch((error) => reject(error));
   });
