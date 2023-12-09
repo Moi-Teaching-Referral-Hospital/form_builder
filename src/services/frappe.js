@@ -25,7 +25,7 @@ const api = ({ method, args = {} }) =>
     const stringifiedArgs = stringifyNestedObjects(args);
 
     axios
-      .post(getUrl(method), { args: stringifiedArgs }, { headers, withCredentials: true })
+      .post(getUrl(method), stringifiedArgs, { headers, withCredentials: true })
       .then((response) => resolve(response.data))
       .catch((error) => reject(error));
   });
