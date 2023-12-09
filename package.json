@@ -1,6 +1,6 @@
 {
   "name": "vue-frappe-formbuilder-health",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Vue Form Builder PRO MAX built from top of Vue. Super dynamic and flexible including Drag and Drop feature.",
   "author": {
     "email": "philmaxsnr@gmail.com",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@whoicd/icd11ect": "^1.4.1",
+    "axios": "^1.6.2",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^2.6.5",

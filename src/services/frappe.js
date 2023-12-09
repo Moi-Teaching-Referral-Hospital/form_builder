@@ -1,13 +1,49 @@
+import axios from "axios";
+
+const stringifyNestedObjects = (input) => {
+  if (typeof input === 'object' && input !== null) {
+    for (let key in input) {
+      if (typeof input[key] === 'object' && input[key] !== null) {
+        input[key] = JSON.stringify(input[key]);
+      }
+    }
+  }
+  return input;
+}
+
 const api = ({ method, args = {} }) =>
+  new Promise((resolve, reject) => {
+    const apiUrl = method;
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    const stringifiedArgs = stringifyNestedObjects(args);
+
+    axios
+      .post(apiUrl, { args: stringifiedArgs }, { headers, withCredentials: true })
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error));
+  });
+
+const fetch = ({ method, args = {} }) =>
+  new Promise((resolve, reject) => {
+    const apiUrl = method; // Assuming method is the URL
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    axios
+      .get(apiUrl, { headers, withCredentials: true, params: args })
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error));
+  });
+
+
+
+export const fetchx = ({ method, args = {} }) =>
   new Promise((resolve, reject) =>
-    frappe.call({ method, args, callback: resolve })
-  );
-
-
-
-export const fetch = ({ method, args = {} }) =>
-  new Promise((resolve, reject) =>
-      frappe.call({ method, type:'GET', args, callback: resolve })
+    frappe.call({ method, type: 'GET', args, callback: resolve })
   );
 
 const getFormConfiguration = ({ name = "" }) =>
