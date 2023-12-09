@@ -28,6 +28,7 @@
 
 <script>
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
+import { api } from "../../services/frappe";
 
 
 export default {
@@ -80,7 +81,7 @@ export default {
    
     fetchData(loading, search, context) {
 
-      frappe.call({
+      api({
         method: "clinical.hie.api.search_terminology",
         args: {
           searchkey: search,

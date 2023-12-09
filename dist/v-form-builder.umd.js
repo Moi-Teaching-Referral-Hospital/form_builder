@@ -11685,15 +11685,18 @@ var DropdownControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var DropdownControl = (DropdownControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LinkControl.vue?vue&type=template&id=275e59d8&scoped=true&
-var LinkControlvue_type_template_id_275e59d8_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":("parent-" + (_vm.control.uniqueId))}},[_c('div',[_c('v-select',{attrs:{"options":_vm.searchResults,"label":"name","filterable":false,"placeholder":"Search"},on:{"search":_vm.onSearch},scopedSlots:_vm._u([{key:"selected-option",fn:function(option){return [_c('div',{staticClass:"selected d-center"},[_vm._v(" "+_vm._s(option.value)+" ")])]}},{key:"option",fn:function(option){return [_c('div',{staticClass:"d-center"},[_vm._v(" "+_vm._s(option.value)+" ")])]}}]),model:{value:(_vm.searchValue),callback:function ($$v) {_vm.searchValue=$$v},expression:"searchValue"}})],1)])}
-var LinkControlvue_type_template_id_275e59d8_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LinkControl.vue?vue&type=template&id=58715031&scoped=true&
+var LinkControlvue_type_template_id_58715031_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":("parent-" + (_vm.control.uniqueId))}},[_c('div',[_c('v-select',{attrs:{"options":_vm.searchResults,"label":"name","filterable":false,"placeholder":"Search"},on:{"search":_vm.onSearch},scopedSlots:_vm._u([{key:"selected-option",fn:function(option){return [_c('div',{staticClass:"selected d-center"},[_vm._v(" "+_vm._s(option.value)+" ")])]}},{key:"option",fn:function(option){return [_c('div',{staticClass:"d-center"},[_vm._v(" "+_vm._s(option.value)+" ")])]}}]),model:{value:(_vm.searchValue),callback:function ($$v) {_vm.searchValue=$$v},expression:"searchValue"}})],1)])}
+var LinkControlvue_type_template_id_58715031_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/LinkControl.vue?vue&type=template&id=275e59d8&scoped=true&
+// CONCATENATED MODULE: ./src/views/controls/LinkControl.vue?vue&type=template&id=58715031&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
 var es6_array_find = __webpack_require__("7514");
+
+// EXTERNAL MODULE: ./src/services/frappe.js + 38 modules
+var services_frappe = __webpack_require__("ee28");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LinkControl.vue?vue&type=script&lang=js&
 
@@ -11724,6 +11727,7 @@ var es6_array_find = __webpack_require__("7514");
 //
 //
 //
+
 
 /* harmony default export */ var LinkControlvue_type_script_lang_js_ = ({
   name: "LinkControl",
@@ -11794,7 +11798,7 @@ var es6_array_find = __webpack_require__("7514");
     fetchData: function fetchData(loading, search, context) {
       var _this = this;
 
-      frappe.call({
+      Object(services_frappe["a" /* api */])({
         method: "frappe.desk.search.search_link",
         args: {
           txt: search,
@@ -11854,11 +11858,11 @@ var es6_array_find = __webpack_require__("7514");
 
 var LinkControl_component = Object(componentNormalizer["a" /* default */])(
   controls_LinkControlvue_type_script_lang_js_,
-  LinkControlvue_type_template_id_275e59d8_scoped_true_render,
-  LinkControlvue_type_template_id_275e59d8_scoped_true_staticRenderFns,
+  LinkControlvue_type_template_id_58715031_scoped_true_render,
+  LinkControlvue_type_template_id_58715031_scoped_true_staticRenderFns,
   false,
   null,
-  "275e59d8",
+  "58715031",
   null
   
 )
@@ -12326,12 +12330,12 @@ var Icd11Control_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Icd11Control = (Icd11Control_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/NhddControl.vue?vue&type=template&id=f3fb476a&scoped=true&
-var NhddControlvue_type_template_id_f3fb476a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":("parent-" + (_vm.control.uniqueId))}},[_c('div',[_c('v-select',{attrs:{"options":_vm.searchResults,"label":"name","filterable":false,"placeholder":"Search"},on:{"search":_vm.onSearch},scopedSlots:_vm._u([{key:"selected-option",fn:function(option){return [_c('div',{staticClass:"selected d-center"},[_vm._v(" "+_vm._s(((option.id) + " - " + (option.display_name)))+" ")])]}},{key:"option",fn:function(option){return [_c('div',{staticClass:"d-center"},[_vm._v(" "+_vm._s(option.id)+" - "+_vm._s(option.display_name)+" ")])]}}]),model:{value:(_vm.searchValue),callback:function ($$v) {_vm.searchValue=$$v},expression:"searchValue"}})],1)])}
-var NhddControlvue_type_template_id_f3fb476a_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/NhddControl.vue?vue&type=template&id=e16eb290&scoped=true&
+var NhddControlvue_type_template_id_e16eb290_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":("parent-" + (_vm.control.uniqueId))}},[_c('div',[_c('v-select',{attrs:{"options":_vm.searchResults,"label":"name","filterable":false,"placeholder":"Search"},on:{"search":_vm.onSearch},scopedSlots:_vm._u([{key:"selected-option",fn:function(option){return [_c('div',{staticClass:"selected d-center"},[_vm._v(" "+_vm._s(((option.id) + " - " + (option.display_name)))+" ")])]}},{key:"option",fn:function(option){return [_c('div',{staticClass:"d-center"},[_vm._v(" "+_vm._s(option.id)+" - "+_vm._s(option.display_name)+" ")])]}}]),model:{value:(_vm.searchValue),callback:function ($$v) {_vm.searchValue=$$v},expression:"searchValue"}})],1)])}
+var NhddControlvue_type_template_id_e16eb290_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/NhddControl.vue?vue&type=template&id=f3fb476a&scoped=true&
+// CONCATENATED MODULE: ./src/views/controls/NhddControl.vue?vue&type=template&id=e16eb290&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/NhddControl.vue?vue&type=script&lang=js&
 
@@ -12365,6 +12369,7 @@ var NhddControlvue_type_template_id_f3fb476a_scoped_true_staticRenderFns = []
 //
 //
 //
+
 
 /* harmony default export */ var NhddControlvue_type_script_lang_js_ = ({
   name: "NhddControl",
@@ -12411,7 +12416,7 @@ var NhddControlvue_type_template_id_f3fb476a_scoped_true_staticRenderFns = []
     fetchData: function fetchData(loading, search, context) {
       var _this = this;
 
-      frappe.call({
+      Object(services_frappe["a" /* api */])({
         method: "clinical.hie.api.search_terminology",
         args: {
           searchkey: search
@@ -12448,11 +12453,11 @@ var NhddControlvue_type_template_id_f3fb476a_scoped_true_staticRenderFns = []
 
 var NhddControl_component = Object(componentNormalizer["a" /* default */])(
   controls_NhddControlvue_type_script_lang_js_,
-  NhddControlvue_type_template_id_f3fb476a_scoped_true_render,
-  NhddControlvue_type_template_id_f3fb476a_scoped_true_staticRenderFns,
+  NhddControlvue_type_template_id_e16eb290_scoped_true_render,
+  NhddControlvue_type_template_id_e16eb290_scoped_true_staticRenderFns,
   false,
   null,
-  "f3fb476a",
+  "e16eb290",
   null
   
 )
@@ -36460,12 +36465,12 @@ var events = __webpack_require__("fbe6");
 // EXTERNAL MODULE: ./src/libraries/sidebar-renderer.class.js
 var sidebar_renderer_class = __webpack_require__("1ec8");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/sidebar-config-views/SidebarConceptSelectList.vue?vue&type=template&id=778ee3b8&scoped=true&
-var SidebarConceptSelectListvue_type_template_id_778ee3b8_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-form-configuration"},[_c('h5',[_vm._v("Select Concept")]),_c('div',[_c('div',{staticStyle:{"margin-bottom":"8px"}},[_c('div',{},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchQuery),expression:"searchQuery"}],staticClass:"form-control md-field",attrs:{"type":"text","placeholder":"Search...."},domProps:{"value":(_vm.searchQuery)},on:{"input":function($event){if($event.target.composing){ return; }_vm.searchQuery=$event.target.value}}})])])]),_c('div',{class:[_vm.styles.LIST_GROUP.CONTAINER]},_vm._l((_vm.controlList),function(control){return _c('a',{key:control.name,class:_vm.styles.LIST_GROUP.SINGLE_ITEM,attrs:{"href":"javascript:void(0)"},on:{"click":function($event){return _vm.selectedControl(control)}}},[_c('p',{staticClass:"type-headline",domProps:{"textContent":_vm._s(control.name || control.type )}}),_c('p',{staticClass:"type-desc",domProps:{"textContent":_vm._s(control.description)}})])}),0)])}
-var SidebarConceptSelectListvue_type_template_id_778ee3b8_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"eabc5390-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/sidebar-config-views/SidebarConceptSelectList.vue?vue&type=template&id=5a17eeac&scoped=true&
+var SidebarConceptSelectListvue_type_template_id_5a17eeac_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-form-configuration"},[_c('h5',[_vm._v("Select Concept")]),_c('div',[_c('div',{staticStyle:{"margin-bottom":"8px"}},[_c('div',{},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchQuery),expression:"searchQuery"}],staticClass:"form-control md-field",attrs:{"type":"text","placeholder":"Search...."},domProps:{"value":(_vm.searchQuery)},on:{"input":function($event){if($event.target.composing){ return; }_vm.searchQuery=$event.target.value}}})])])]),_c('div',{class:[_vm.styles.LIST_GROUP.CONTAINER]},_vm._l((_vm.controlList),function(control){return _c('a',{key:control.name,class:_vm.styles.LIST_GROUP.SINGLE_ITEM,attrs:{"href":"javascript:void(0)"},on:{"click":function($event){return _vm.selectedControl(control)}}},[_c('p',{staticClass:"type-headline",domProps:{"textContent":_vm._s(control.name || control.type )}}),_c('p',{staticClass:"type-desc",domProps:{"textContent":_vm._s(control.description)}})])}),0)])}
+var SidebarConceptSelectListvue_type_template_id_5a17eeac_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/builder/sidebar-config-views/SidebarConceptSelectList.vue?vue&type=template&id=778ee3b8&scoped=true&
+// CONCATENATED MODULE: ./src/views/builder/sidebar-config-views/SidebarConceptSelectList.vue?vue&type=template&id=5a17eeac&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
 var defineProperty = __webpack_require__("bd86");
@@ -36529,6 +36534,9 @@ var sidebar_body_mixin = __webpack_require__("cbce");
 // EXTERNAL MODULE: ./src/libraries/helper.js
 var helper = __webpack_require__("43b3");
 
+// EXTERNAL MODULE: ./src/services/frappe.js + 38 modules
+var frappe = __webpack_require__("ee28");
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/sidebar-config-views/SidebarConceptSelectList.vue?vue&type=script&lang=js&
 
 
@@ -36567,6 +36575,7 @@ var _name$mixins$computed;
 //
 //
 //
+
 
 
 
@@ -36639,7 +36648,7 @@ var _name$mixins$computed;
   },
   fetchConcepts: function fetchConcepts(t) {
     var e = this;
-    frappe.call({
+    Object(frappe["a" /* api */])({
       method: "clinical.api.forms.form_builder.concept_query",
       args: {
         txt: t
@@ -36666,11 +36675,11 @@ var componentNormalizer = __webpack_require__("2877");
 
 var component = Object(componentNormalizer["a" /* default */])(
   sidebar_config_views_SidebarConceptSelectListvue_type_script_lang_js_,
-  SidebarConceptSelectListvue_type_template_id_778ee3b8_scoped_true_render,
-  SidebarConceptSelectListvue_type_template_id_778ee3b8_scoped_true_staticRenderFns,
+  SidebarConceptSelectListvue_type_template_id_5a17eeac_scoped_true_render,
+  SidebarConceptSelectListvue_type_template_id_5a17eeac_scoped_true_staticRenderFns,
   false,
   null,
-  "778ee3b8",
+  "5a17eeac",
   null
   
 )
@@ -37986,7 +37995,7 @@ var services_frappe = __webpack_require__("ee28");
         var data = {
           doctype: this.formData.formConfig.mappedDoctype
         };
-        Object(services_frappe["b" /* getDoctypeFields */])(data).then(function (result) {
+        Object(services_frappe["c" /* getDoctypeFields */])(data).then(function (result) {
           _this.doctypeFields = result.fields.map(function (item) {
             return item.fieldname;
           });
@@ -38874,7 +38883,7 @@ var table_view_mixin = __webpack_require__("cf35");
     getForm: function getForm(name) {
       var _this2 = this;
 
-      Object(services_frappe["c" /* getFormConfiguration */])({
+      Object(services_frappe["d" /* getFormConfiguration */])({
         name: name
       }).then(function (config) {
         var formStringConfig = config.formdata;
@@ -38886,7 +38895,7 @@ var table_view_mixin = __webpack_require__("cf35");
       });
     },
     saveForm: function saveForm(formData) {
-      Object(services_frappe["f" /* saveFormData */])(formData).then(function (saved) {});
+      Object(services_frappe["g" /* saveFormData */])(formData).then(function (saved) {});
     },
     save: function save() {
       var form_content = this.formInputData;
@@ -39654,7 +39663,7 @@ var FullTableRowRenderView_component = Object(componentNormalizer["a" /* default
         start: 0,
         limit: 200
       };
-      Object(services_frappe["d" /* getList */])(formData).then(function (response) {
+      Object(services_frappe["e" /* getList */])(formData).then(function (response) {
         _this.loaded = response.message.map(function (item) {
           var formResponse = JSON.parse(item.form_content);
           formResponse.rowId = item.name;
@@ -40850,10 +40859,10 @@ module.exports = function (original) {
           _this3.items = _this3.items.filter(function (item) {
             return item.rowId != val.rowId;
           });
-          Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* deleteRepo */ "a"])({
+          Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* deleteRepo */ "b"])({
             name: val.rowId
           }).then(function (reslt) {
-            Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* notify */ "e"])("Item removed");
+            Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* notify */ "f"])("Item removed");
           });
         }
       }).catch(function (err) {});
@@ -40888,7 +40897,7 @@ module.exports = function (original) {
     getForm: function getForm(name) {
       var _this5 = this;
 
-      Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* getFormConfiguration */ "c"])({
+      Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* getFormConfiguration */ "d"])({
         name: name
       }).then(function (config) {
         var formStringConfig = config.formdata;
@@ -40966,10 +40975,10 @@ module.exports = function (original) {
     saveForm: function saveForm(formData) {
       var _this7 = this;
 
-      Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* saveFormData */ "f"])(formData).then(function (saved) {
+      Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* saveFormData */ "g"])(formData).then(function (saved) {
         _this7.getSave(saved.name);
 
-        Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* notify */ "e"])("Item saved " + saved.name);
+        Object(_services_frappe__WEBPACK_IMPORTED_MODULE_8__[/* notify */ "f"])("Item saved " + saved.name);
 
         _this7.savedItems.push(saved.name);
       });
@@ -41931,14 +41940,15 @@ module.exports = function whichTypedArray(value) {
 "use strict";
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ getFormConfiguration; });
-__webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ saveFormData; });
-__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ notify; });
-__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ getList; });
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ getDoctypeFields; });
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ deleteRepo; });
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ frappe_api; });
+__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ getFormConfiguration; });
+__webpack_require__.d(__webpack_exports__, "g", function() { return /* binding */ saveFormData; });
+__webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ notify; });
+__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ getList; });
+__webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ getDoctypeFields; });
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ deleteRepo; });
 
-// UNUSED EXPORTS: fetchx, api
+// UNUSED EXPORTS: fetchx
 
 // NAMESPACE OBJECT: ./node_modules/axios/lib/platform/common/utils.js
 var utils_namespaceObject = {};
@@ -44392,6 +44402,10 @@ axios.default = axios;
 
 
 
+var getUrl = function getUrl(method) {
+  return "".concat(localStorage.getItem('appBaseUrl'), "/api/method/").concat(method);
+};
+
 var frappe_stringifyNestedObjects = function stringifyNestedObjects(input) {
   if (Object(esm_typeof["a" /* default */])(input) === 'object' && input !== null) {
     for (var key in input) {
@@ -44409,12 +44423,11 @@ var frappe_api = function api(_ref) {
       _ref$args = _ref.args,
       args = _ref$args === void 0 ? {} : _ref$args;
   return new Promise(function (resolve, reject) {
-    var apiUrl = method;
     var headers = {
       'Content-Type': 'application/json'
     };
     var stringifiedArgs = frappe_stringifyNestedObjects(args);
-    lib_axios.post(apiUrl, {
+    lib_axios.post(getUrl(method), {
       args: stringifiedArgs
     }, {
       headers: headers,
@@ -44432,12 +44445,10 @@ var frappe_fetch = function fetch(_ref2) {
       _ref2$args = _ref2.args,
       args = _ref2$args === void 0 ? {} : _ref2$args;
   return new Promise(function (resolve, reject) {
-    var apiUrl = method; // Assuming method is the URL
-
     var headers = {
       "Content-Type": "application/json"
     };
-    lib_axios.get(apiUrl, {
+    lib_axios.get(getUrl(method), {
       headers: headers,
       withCredentials: true,
       params: args
@@ -44454,7 +44465,7 @@ var fetchx = function fetchx(_ref3) {
       _ref3$args = _ref3.args,
       args = _ref3$args === void 0 ? {} : _ref3$args;
   return new Promise(function (resolve, reject) {
-    return frappe.call({
+    return x.call({
       method: method,
       type: 'GET',
       args: args,
@@ -44505,7 +44516,7 @@ var saveFormData = function saveFormData(_ref8) {
 };
 
 var notify = function notify(message) {
-  frappe.show_alert(message, 5);
+  alert(message);
 };
 
 var getList = function getList(payload) {

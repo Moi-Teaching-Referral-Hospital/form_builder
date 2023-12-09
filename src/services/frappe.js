@@ -46,7 +46,7 @@ const fetch = ({ method, args = {} }) =>
 
 export const fetchx = ({ method, args = {} }) =>
   new Promise((resolve, reject) =>
-    frappe.call({ method, type: 'GET', args, callback: resolve })
+    x.call({ method, type: 'GET', args, callback: resolve })
   );
 
 const getFormConfiguration = ({ name = "" }) =>
@@ -75,7 +75,7 @@ const saveFormData = ({ formData }) =>
   }).then(({ message }) => message);
 
 const notify = (message) => {
-  frappe.show_alert(message, 5);
+  alert(message)
 };
 
 const getList = (payload) =>
